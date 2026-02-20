@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>누가복음 인포그래픽</title>
+  <!-- Tailwind CSS (스타일링을 위한 라이브러리) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0f172a; /* 기본 배경색 설정 */
+    }
+
+    /* 애니메이션 정의 */
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    .pulse {
+      animation: pulse 2s ease-in-out infinite;
+    }
+  </style>
+ </head>
+ <body>
+  <div id="app"></div>
+
+  <script>
+    // 1. 설정 데이터 (여기서 텍스트와 색상을 수정할 수 있습니다)
+    const config = {
+      background_color: "#0f172a",
+      surface_color: "#ffffff",
+      text_color: "#1e293b",
+      primary_action_color: "#f59e0b",
+      secondary_action_color: "#3b82f6",
+      font_family: "Noto Sans KR",
+      font_size: 16,
+      main_title: "더 확실하게 하려 함이로다",
+      scripture_text: "누가복음 1:1-4",
+      fact_title: "역사적 사실",
+      luke_title: "누가는 누구인가?",
+      transformation_title: "말씀의 능력",
+      obedience_title: "성령과 순종",
+      conclusion_text: "우리도 누가처럼",
+      prayer_title: "오늘의 기도",
+      prayer_content: "하나님 아버지, 누가처럼 성령의 감동에 순종하며 말씀을 삶으로 살아내는 우리가 되게 하소서. 오늘 들은 말씀이 지식에 그치지 않고 삶의 변화로 이어지게 하시고, 데오빌로처럼 더 확실한 믿음을 갖게 하소서. 예수님의 이름으로 기도합니다. 아멘."
+    };
+
+    // 2. 화면 렌더링 함수
+    function renderApp() {
+      const app = document.getElementById('app');
+      const baseFontStack = 'system-ui, -apple-system, sans-serif';
+      const baseSize = config.font_size;
+      
+      const bgColor = config.background_color;
+      const surfaceColor = config.surface_color;
+      const textColor = config.text_color;
+      const primaryColor = config.primary_action_color;
+      const secondaryColor = config.secondary_action_color;
+      const customFont = config.font_family;
+
+      // 스타일 적용
+      app.style.fontFamily = `${customFont}, ${baseFontStack}`;
+      app.style.background = bgColor;
+      app.style.minHeight = '100vh'; // 전체 화면 높이
+      app.style.width = '100%';
+      app.style.padding = '0';
+      app.style.margin = '0';
+
+      // HTML 구조 생성
+      app.innerHTML = `
+        <div style="width: 100%; background: linear-gradient(180deg, ${bgColor} 0%, ${bgColor}dd 100%); padding: ${baseSize * 2}px ${baseSize}px; min-height: 100vh;">
+          
+          <!-- Hero Section -->
+          <div style="max-width: 1400px; margin: 0 auto; text-align: center; padding: ${baseSize * 2.5}px ${baseSize}px ${baseSize * 3}px;">
+            <div style="display: inline-block; background: ${primaryColor}; color: white; padding: ${baseSize * 0.7}px ${baseSize * 2.5}px; border-radius: 30px; font-size: ${baseSize * 0.95}px; font-weight: 800; margin-bottom: ${baseSize * 1.2}px; letter-spacing: 2px; box-shadow: 0 6px 16px ${primaryColor}70;">
+              ${config.scripture_text}
+            </div>
+            <h1 style="color: ${surfaceColor}; font-size: ${baseSize * 3.2}px; margin: ${baseSize * 0.8}px 0 ${baseSize}px 0; line-height: 1.1; font-weight: 900; text-shadow: 0 3px 10px rgba(0,0,0,0.4);">
+              ${config.main_title}
+            </h1>
+            <div style="width: 80px; height: 5px; background: linear-gradient(to right, ${primaryColor}, ${secondaryColor}); margin: ${baseSize * 1.5}px auto; border-radius: 5px;"></div>
+          </div>
+
+          <!-- Infographic Flow -->
+          <div style="max-width: 1400px; margin: 0 auto; padding: 0 ${baseSize}px ${baseSize * 3}px;">
+            
+            <!-- Section 1: Historical Foundation -->
+            <div class="fade-in-up" style="background: ${surfaceColor}; border-radius: 28px; padding: ${baseSize * 3.5}px ${baseSize * 2.5}px; margin-bottom: ${baseSize * 2}px; box-shadow: 0 12px 35px rgba(0,0,0,0.3); position: relative;">
+              <div style="position: absolute; top: -35px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, ${primaryColor}, #ea580c); color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: ${baseSize * 1.8}px; font-weight: 900; box-shadow: 0 8px 20px ${primaryColor}90; border: 5px solid ${bgColor};">1</div>
+              
+              <div style="text-align: center; margin-bottom: ${baseSize * 2.5}px; padding-top: ${baseSize}px;">
+                <div style="font-size: ${baseSize * 5}px; margin-bottom: ${baseSize * 1.2}px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));">📜</div>
+                <h2 style="color: ${primaryColor}; font-size: ${baseSize * 2.3}px; margin: 0 0 ${baseSize * 1.2}px 0; font-weight: 900;">
+                  ${config.fact_title}
+                </h2>
+                <p style="color: #64748b; font-size: ${baseSize * 1.15}px; line-height: 1.9; max-width: 750px; margin: 0 auto;">
+                  누가복음: <strong style="color: ${textColor};">"우리 중에 이루어진 사실"</strong><br>
+                  기독교는 감정이나 철학이 아닌 <strong style="color: ${primaryColor}; font-size: ${baseSize * 1.25}px;">역사 속 실제 사건</strong>에 기반합니다
+                </p>
+              </div>
+
+              <div style="background: linear-gradient(135deg, ${primaryColor}08, ${secondaryColor}08); padding: ${baseSize * 2}px; border-radius: 20px; margin-bottom: ${baseSize * 2}px;">
+                <div style="text-align: center; color: ${primaryColor}; font-weight: 800; font-size: ${baseSize * 1.2}px; margin-bottom: ${baseSize * 1.5}px;">
+                  🔍 정직하게 탐구하다 예수를 만난 사람들
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: ${baseSize * 1.5}px;">
+                  <div style="background: ${surfaceColor}; padding: ${baseSize * 2}px; border-radius: 16px; border-left: 6px solid ${primaryColor}; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center;">
+                    <div style="font-size: ${baseSize * 3.5}px; margin-bottom: ${baseSize}px;">📰</div>
+                    <div style="font-weight: 800; color: ${textColor}; font-size: ${baseSize * 1.15}px; margin-bottom: ${baseSize * 0.6}px;">리 스트로벨</div>
+                    <div style="font-size: ${baseSize * 0.9}px; color: #64748b; margin-bottom: ${baseSize * 0.5}px;">저널리스트</div>
+                    <div style="display: inline-block; background: ${primaryColor}15; color: ${primaryColor}; padding: ${baseSize * 0.4}px ${baseSize}px; border-radius: 12px; font-size: ${baseSize * 0.8}px; font-weight: 700;">→ 신자</div>
+                  </div>
+                  <div style="background: ${surfaceColor}; padding: ${baseSize * 2}px; border-radius: 16px; border-left: 6px solid ${secondaryColor}; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center;">
+                    <div style="font-size: ${baseSize * 3.5}px; margin-bottom: ${baseSize}px;">✡️</div>
+                    <div style="font-weight: 800; color: ${textColor}; font-size: ${baseSize * 1.15}px; margin-bottom: ${baseSize * 0.6}px;">스탠 텔친</div>
+                    <div style="font-size: ${baseSize * 0.9}px; color: #64748b; margin-bottom: ${baseSize * 0.5}px;">유대인</div>
+                    <div style="display: inline-block; background: ${secondaryColor}15; color: ${secondaryColor}; padding: ${baseSize * 0.4}px ${baseSize}px; border-radius: 12px; font-size: ${baseSize * 0.8}px; font-weight: 700;">→ 목사</div>
+                  </div>
+                  <div style="background: ${surfaceColor}; padding: ${baseSize * 2}px; border-radius: 16px; border-left: 6px solid ${primaryColor}; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center;">
+                    <div style="font-size: ${baseSize * 3.5}px; margin-bottom: ${baseSize}px;">🎤</div>
+                    <div style="font-weight: 800; color: ${textColor}; font-size: ${baseSize * 1.15}px; margin-bottom: ${baseSize * 0.6}px;">조정민</div>
+                    <div style="font-size: ${baseSize * 0.9}px; color: #64748b; margin-bottom: ${baseSize * 0.5}px;">MBC 앵커</div>
+                    <div style="display: inline-block; background: ${primaryColor}15; color: ${primaryColor}; padding: ${baseSize * 0.4}px ${baseSize}px; border-radius: 12px; font-size: ${baseSize * 0.8}px; font-weight: 700;">→ 신자</div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="background: linear-gradient(to right, ${primaryColor}20, ${secondaryColor}20); padding: ${baseSize * 1.8}px ${baseSize * 2}px; border-radius: 16px; text-align: center; border: 3px dashed ${primaryColor}60;">
+                <strong style="color: ${primaryColor}; font-size: ${baseSize * 1.15}px;">✨ 공통점:</strong>
+                <span style="color: ${textColor}; font-size: ${baseSize * 1.05}px; font-weight: 600;"> 정직하게 탐구하다 예수를 만났습니다</span>
+              </div>
+            </div>
+
+            <!-- Arrow Down -->
+            <div style="text-align: center; margin: ${baseSize * 2}px 0;">
+              <div style="color: ${primaryColor}; font-size: ${baseSize * 4}px; animation: bounce 2s infinite; filter: drop-shadow(0 4px 8px ${primaryColor}50);">⬇</div>
+            </div>
+
+            <!-- Section 2: Luke Profile -->
+            <div class="fade-in-up" style="background: ${surfaceColor}; border-radius: 28px; padding: ${baseSize * 3.5}px ${baseSize * 2.5}px; margin-bottom: ${baseSize * 2}px; box-shadow: 0 12px 35px rgba(0,0,0,0.3); position: relative;">
+              <div style="position: absolute; top: -35px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, ${secondaryColor}, #1e40af); color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: ${baseSize * 1.8}px; font-weight: 900; box-shadow: 0 8px 20px ${secondaryColor}90; border: 5px solid ${bgColor};">2</div>
+              
+              <div style="text-align: center; margin-bottom: ${baseSize * 3}px; padding-top: ${baseSize}px;">
+                <div style="font-size: ${baseSize * 5}px; margin-bottom: ${baseSize * 1.2}px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));">👨‍⚕️</div>
+                <h2 style="color: ${secondaryColor}; font-size: ${baseSize * 2.3}px; margin: 0 0 ${baseSize * 1.5}px 0; font-weight: 900;">
+                  ${config.luke_title}
+                </h2>
+                <div style="display: inline-block; background: linear-gradient(to right, ${primaryColor}25, ${secondaryColor}25); padding: ${baseSize * 1.2}px ${baseSize * 2.5}px; border-radius: 40px; font-style: italic; color: ${textColor}; font-size: ${baseSize * 1.05}px; font-weight: 600; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                  "근원부터 자세히 미루어 살핀 사람"
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: ${baseSize * 2.5}px; max-width: 1000px; margin: 0 auto;">
+                <div style="text-align: center;">
+                  <div style="width: 120px; height: 120px; margin: 0 auto ${baseSize * 1.2}px; background: linear-gradient(135deg, ${primaryColor}, #ea580c); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px ${primaryColor}50; border: 6px solid ${surfaceColor}; position: relative;">
+                    <span style="font-size: ${baseSize * 3.5}px;">💙</span>
+                    <div style="position: absolute; top: -8px; right: -8px; width: 35px; height: 35px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 8px rgba(0,0,0,0.2); font-size: ${baseSize * 1.1}px;">1</div>
+                  </div>
+                  <h3 style="color: ${primaryColor}; font-size: ${baseSize * 1.3}px; margin: 0 0 ${baseSize * 0.7}px 0; font-weight: 900;">사랑받는 증인</h3>
+                  <p style="color: #64748b; font-size: ${baseSize * 0.9}px; line-height: 1.7; margin: 0;">"사랑받는 의사"<br>인격적 신뢰를 얻은 사람</p>
+                </div>
+
+                <div style="text-align: center;">
+                  <div style="width: 120px; height: 120px; margin: 0 auto ${baseSize * 1.2}px; background: linear-gradient(135deg, ${secondaryColor}, #1e40af); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px ${secondaryColor}50; border: 6px solid ${surfaceColor}; position: relative;">
+                    <span style="font-size: ${baseSize * 3.5}px;">🤝</span>
+                    <div style="position: absolute; top: -8px; right: -8px; width: 35px; height: 35px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 8px rgba(0,0,0,0.2); font-size: ${baseSize * 1.1}px;">2</div>
+                  </div>
+                  <h3 style="color: ${secondaryColor}; font-size: ${baseSize * 1.3}px; margin: 0 0 ${baseSize * 0.7}px 0; font-weight: 900;">충성스런 조력자</h3>
+                  <p style="color: #64748b; font-size: ${baseSize * 0.9}px; line-height: 1.7; margin: 0;">바울의 협역자<br>"끝까지 함께한 사람"</p>
+                </div>
+
+                <div style="text-align: center;">
+                  <div style="width: 120px; height: 120px; margin: 0 auto ${baseSize * 1.2}px; background: linear-gradient(135deg, ${primaryColor}, ${secondaryColor}); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(245,158,11,0.5); border: 6px solid ${surfaceColor}; position: relative;">
+                    <span style="font-size: ${baseSize * 3.5}px;">📚</span>
+                    <div style="position: absolute; top: -8px; right: -8px; width: 35px; height: 35px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 8px rgba(0,0,0,0.2); font-size: ${baseSize * 1.1}px;">3</div>
+                  </div>
+                  <h3 style="color: ${primaryColor}; font-size: ${baseSize * 1.3}px; margin: 0 0 ${baseSize * 0.7}px 0; font-weight: 900;">성실한 지식인</h3>
+                  <p style="color: #64748b; font-size: ${baseSize * 0.9}px; line-height: 1.7; margin: 0;">자세히 조사하고<br>정확하게 기록한 사람</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Arrow Down -->
+            <div style="text-align: center; margin: ${baseSize * 2}px 0;">
+              <div style="color: ${secondaryColor}; font-size: ${baseSize * 4}px; animation: bounce 2s infinite 0.3s; filter: drop-shadow(0 4px 8px ${secondaryColor}50);">⬇</div>
+            </div>
+
+            <!-- Section 3: Transformation Diagram -->
+            <div class="fade-in-up" style="background: ${surfaceColor}; border-radius: 28px; padding: ${baseSize * 3.5}px ${baseSize * 2.5}px; margin-bottom: ${baseSize * 2}px; box-shadow: 0 12px 35px rgba(0,0,0,0.3); position: relative;">
+              <div style="position: absolute; top: -35px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, ${primaryColor}, #ea580c); color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: ${baseSize * 1.8}px; font-weight: 900; box-shadow: 0 8px 20px ${primaryColor}90; border: 5px solid ${bgColor};">3</div>
+              
+              <div style="text-align: center; margin-bottom: ${baseSize * 2.5}px; padding-top: ${baseSize}px;">
+                <div style="font-size: ${baseSize * 5}px; margin-bottom: ${baseSize * 1.2}px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));">✨</div>
+                <h2 style="color: ${primaryColor}; font-size: ${baseSize * 2.3}px; margin: 0 0 ${baseSize}px 0; font-weight: 900;">
+                  ${config.transformation_title}
+                </h2>
+                <p style="color: #64748b; font-size: ${baseSize * 1.05}px;">데오빌로의 놀라운 변화 여정</p>
+              </div>
+
+              <div style="max-width: 900px; margin: 0 auto; padding: ${baseSize * 3.5}px ${baseSize * 2.5}px; background: linear-gradient(to bottom, #fef3c7, #fffbeb); border-radius: 24px; border: 4px solid ${primaryColor}40; box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);">
+                <div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: ${baseSize * 2.5}px;">
+                  <div style="text-align: center; flex: 1; min-width: 220px;">
+                    <div style="background: white; padding: ${baseSize * 2.5}px ${baseSize * 2}px; border-radius: 20px; box-shadow: 0 6px 16px rgba(0,0,0,0.12); border: 4px solid #fbbf24; position: relative;">
+                      <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #fbbf24; color: white; padding: ${baseSize * 0.4}px ${baseSize * 1.2}px; border-radius: 20px; font-size: ${baseSize * 0.75}px; font-weight: 800; white-space: nowrap;">BEFORE</div>
+                      <div style="font-size: ${baseSize * 4}px; margin-bottom: ${baseSize * 1.2}px;">👔</div>
+                      <div style="font-size: ${baseSize * 1.4}px; font-weight: 900; color: #92400e; margin-bottom: ${baseSize * 0.7}px;">데오빌로 각하</div>
+                      <div style="background: #fef3c7; padding: ${baseSize * 0.6}px ${baseSize * 1.2}px; border-radius: 12px; font-size: ${baseSize * 0.85}px; color: #92400e; font-weight: 600;">높은 지위의 관료</div>
+                    </div>
+                  </div>
+
+                  <div style="text-align: center; flex: 0;">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: ${baseSize}px;">
+                      <div style="font-size: ${baseSize * 2}px; color: ${primaryColor}; font-weight: 900;">📖</div>
+                      <div style="background: linear-gradient(135deg, ${primaryColor}, ${secondaryColor}); color: white; padding: ${baseSize * 1.2}px ${baseSize * 2}px; border-radius: 25px; font-weight: 900; font-size: ${baseSize}px; white-space: nowrap; box-shadow: 0 4px 12px rgba(0,0,0,0.2); border: 3px solid white;">누가복음<br>읽음</div>
+                      <div style="font-size: ${baseSize * 3}px; color: ${primaryColor};">↓</div>
+                    </div>
+                  </div>
+
+                  <div style="text-align: center; flex: 1; min-width: 220px;">
+                    <div style="background: linear-gradient(135deg, ${primaryColor}, #ea580c); padding: ${baseSize * 2.5}px ${baseSize * 2}px; border-radius: 20px; box-shadow: 0 8px 20px ${primaryColor}60; border: 4px solid ${primaryColor}; position: relative;">
+                      <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: white; color: ${primaryColor}; padding: ${baseSize * 0.4}px ${baseSize * 1.2}px; border-radius: 20px; font-size: ${baseSize * 0.75}px; font-weight: 800; white-space: nowrap; border: 2px solid ${primaryColor};">AFTER</div>
+                      <div style="font-size: ${baseSize * 4}px; margin-bottom: ${baseSize * 1.2}px;">🙏</div>
+                      <div style="font-size: ${baseSize * 1.4}px; font-weight: 900; color: white; margin-bottom: ${baseSize * 0.7}px; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">데오빌로여</div>
+                      <div style="background: rgba(255,255,255,0.3); padding: ${baseSize * 0.6}px ${baseSize * 1.2}px; border-radius: 12px; font-size: ${baseSize * 0.85}px; color: white; font-weight: 700; backdrop-filter: blur(10px);">믿음의 형제</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="margin-top: ${baseSize * 3}px; padding: ${baseSize * 2}px; background: white; border-radius: 16px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 3px dashed ${primaryColor};">
+                  <div style="font-size: ${baseSize * 2}px; margin-bottom: ${baseSize * 0.8}px;">💫</div>
+                  <div style="font-size: ${baseSize * 1.3}px; color: ${primaryColor}; font-weight: 900; margin-bottom: ${baseSize * 0.8}px;">변화의 핵심</div>
+                  <div style="font-size: ${baseSize * 1.1}px; color: ${textColor}; line-height: 1.8; font-weight: 600;">
+                    말씀 한 권이 <strong style="color: ${primaryColor}; font-size: ${baseSize * 1.25}px;">한 사람의 삶을 바꿨습니다</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Arrow Down -->
+            <div style="text-align: center; margin: ${baseSize * 2}px 0;">
+              <div style="color: ${primaryColor}; font-size: ${baseSize * 4}px; animation: bounce 2s infinite 0.6s; filter: drop-shadow(0 4px 8px ${primaryColor}50);">⬇</div>
+            </div>
+
+            <!-- Section 4: Purpose & Obedience -->
+            <div class="fade-in-up" style="background: linear-gradient(135deg, ${primaryColor}, ${secondaryColor}); border-radius: 28px; padding: ${baseSize * 4}px ${baseSize * 2.5}px; box-shadow: 0 15px 40px rgba(0,0,0,0.4); position: relative; overflow: hidden; margin-bottom: ${baseSize * 2}px;">
+              <div style="position: absolute; top: -35px; left: 50%; transform: translateX(-50%); background: white; color: ${primaryColor}; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: ${baseSize * 1.8}px; font-weight: 900; box-shadow: 0 8px 20px rgba(0,0,0,0.25); border: 5px solid ${bgColor};">4</div>
+              
+              <div style="position: absolute; top: 30px; right: 30px; font-size: ${baseSize * 15}px; opacity: 0.12;">🕊️</div>
+              <div style="position: absolute; bottom: 30px; left: 30px; font-size: ${baseSize * 12}px; opacity: 0.12;">✨</div>
+              
+              <div style="text-align: center; color: white; position: relative; z-index: 1; padding-top: ${baseSize * 1.5}px;">
+                <div style="font-size: ${baseSize * 5}px; margin-bottom: ${baseSize * 1.2}px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));">✨</div>
+                <h2 style="font-size: ${baseSize * 2.5}px; margin: 0 0 ${baseSize * 2}px 0; font-weight: 900; text-shadow: 0 3px 10px rgba(0,0,0,0.3);">
+                  ${config.obedience_title}
+                </h2>
+                
+                <div style="max-width: 900px; margin: 0 auto ${baseSize * 3}px;">
+                  <div style="background: rgba(255,255,255,0.28); backdrop-filter: blur(20px); padding: ${baseSize * 2.5}px; border-radius: 20px; border: 3px solid rgba(255,255,255,0.4); margin-bottom: ${baseSize * 2.5}px; box-shadow: 0 8px 24px rgba(0,0,0,0.2);">
+                    <div style="font-size: ${baseSize * 1.4}px; font-weight: 900; margin-bottom: ${baseSize * 1.2}px; text-shadow: 0 2px 6px rgba(0,0,0,0.2);">📖 누가복음 기록 목적</div>
+                    <div style="font-size: ${baseSize * 1.7}px; line-height: 1.8; font-style: italic; text-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                      "이는 각하가 알고 있는 바를<br>
+                      <strong style="font-size: ${baseSize * 2.1}px;">더 확실하게 하려 함이라</strong>"
+                    </div>
+                  </div>
+
+                  <div style="background: rgba(255,255,255,0.22); backdrop-filter: blur(15px); padding: ${baseSize * 2.5}px; border-radius: 20px; border: 3px solid rgba(255,255,255,0.35); box-shadow: 0 6px 20px rgba(0,0,0,0.15);">
+                    <div style="font-size: ${baseSize * 1.15}px; line-height: 2; margin-bottom: ${baseSize * 1.8}px; text-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+                      누가는 성령의 감동을 받아들여 순종했고,<br>
+                      그의 글은 오늘날 <strong style="font-size: ${baseSize * 1.35}px;">성경</strong>이 되었습니다
+                    </div>
+                    <div style="display: inline-block; background: rgba(255,255,255,0.35); backdrop-filter: blur(10px); padding: ${baseSize * 1.2}px ${baseSize * 2}px; border-radius: 25px; font-size: ${baseSize}px; font-weight: 800; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                      💡 성령의 감동 + 사람의 순종 = 하나님의 역사
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Final Summary -->
+            <div class="fade-in-up" style="background: ${surfaceColor}; border-radius: 28px; padding: ${baseSize * 4}px ${baseSize * 2.5}px; box-shadow: 0 12px 35px rgba(0,0,0,0.3); text-align: center; position: relative; overflow: hidden;">
+              <div style="position: absolute; top: 20px; right: 20px; font-size: ${baseSize * 10}px; opacity: 0.05;">🎯</div>
+              
+              <div style="font-size: ${baseSize * 5}px; margin-bottom: ${baseSize * 1.5}px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));">🎯</div>
+              <h2 style="color: ${primaryColor}; font-size: ${baseSize * 2.5}px; margin: 0 0 ${baseSize * 2.5}px 0; font-weight: 900;">
+                ${config.conclusion_text}
+              </h2>
+              
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: ${baseSize * 2}px; max-width: 1000px; margin: 0 auto ${baseSize * 3}px;">
+                <div style="background: linear-gradient(to bottom, ${primaryColor}20, ${primaryColor}08); padding: ${baseSize * 2.5}px ${baseSize * 1.5}px; border-radius: 20px; border: 4px solid ${primaryColor}50; transition: transform 0.3s;">
+                  <div style="font-size: ${baseSize * 4.5}px; margin-bottom: ${baseSize * 1.2}px;">💙</div>
+                  <div style="font-size: ${baseSize * 1.2}px; color: ${textColor}; font-weight: 900; line-height: 1.5;">사랑받는<br>증인</div>
+                </div>
+                <div style="background: linear-gradient(to bottom, ${secondaryColor}20, ${secondaryColor}08); padding: ${baseSize * 2.5}px ${baseSize * 1.5}px; border-radius: 20px; border: 4px solid ${secondaryColor}50; transition: transform 0.3s;">
+                  <div style="font-size: ${baseSize * 4.5}px; margin-bottom: ${baseSize * 1.2}px;">🙏</div>
+                  <div style="font-size: ${baseSize * 1.2}px; color: ${textColor}; font-weight: 900; line-height: 1.5;">겸손한<br>조력자</div>
+                </div>
+                <div style="background: linear-gradient(to bottom, ${primaryColor}20, ${primaryColor}08); padding: ${baseSize * 2.5}px ${baseSize * 1.5}px; border-radius: 20px; border: 4px solid ${primaryColor}50; transition: transform 0.3s;">
+                  <div style="font-size: ${baseSize * 4.5}px; margin-bottom: ${baseSize * 1.2}px;">✅</div>
+                  <div style="font-size: ${baseSize * 1.2}px; color: ${textColor}; font-weight: 900; line-height: 1.5;">순종하는<br>사람</div>
+                </div>
+              </div>
+
+              <div style="background: linear-gradient(135deg, ${primaryColor}15, ${secondaryColor}15); padding: ${baseSize * 2.5}px ${baseSize * 2}px; border-radius: 20px; border: 3px dashed ${primaryColor}60; max-width: 800px; margin: 0 auto; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                <div style="font-size: ${baseSize * 2.5}px; margin-bottom: ${baseSize}px;">📌</div>
+                <p style="color: #64748b; font-size: ${baseSize * 1.15}px; line-height: 1.9; margin: 0;">
+                  예수님은 <strong style="color: ${primaryColor}; font-size: ${baseSize * 1.25}px;">신화가 아니라 역사적 사실</strong>이며,<br>
+                  오늘 말씀이 <strong style="color: ${secondaryColor}; font-size: ${baseSize * 1.25}px;">삶의 변화로 이어지는 은혜</strong>가 되기를 바랍니다
+                </p>
+              </div>
+            </div>
+
+            <!-- Prayer Section -->
+            <div class="fade-in-up" style="background: linear-gradient(135deg, #7c3aed, #c026d3); border-radius: 28px; padding: ${baseSize * 4}px ${baseSize * 2.5}px; margin-top: ${baseSize * 3}px; box-shadow: 0 15px 40px rgba(124,58,237,0.4); position: relative; overflow: hidden;">
+              <div style="position: absolute; top: 20px; right: 20px; font-size: ${baseSize * 18}px; opacity: 0.1; transform: rotate(-15deg);">🙏</div>
+              <div style="position: absolute; bottom: 20px; left: 20px; font-size: ${baseSize * 12}px; opacity: 0.1;">✝️</div>
+              
+              <div style="text-align: center; color: white; position: relative; z-index: 1;">
+                <div style="font-size: ${baseSize * 5}px; margin-bottom: ${baseSize * 1.5}px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)); animation: pulse 3s ease-in-out infinite;" class="pulse">🙏</div>
+                <h2 style="font-size: ${baseSize * 2.5}px; margin: 0 0 ${baseSize * 2}px 0; font-weight: 900; text-shadow: 0 3px 10px rgba(0,0,0,0.3);">
+                  ${config.prayer_title}
+                </h2>
+                
+                <div style="max-width: 800px; margin: 0 auto;">
+                  <div style="background: rgba(255,255,255,0.25); backdrop-filter: blur(20px); padding: ${baseSize * 3}px ${baseSize * 2.5}px; border-radius: 20px; border: 3px solid rgba(255,255,255,0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.2);">
+                    <p style="font-size: ${baseSize * 1.15}px; line-height: 2.1; margin: 0; text-align: left; text-shadow: 0 2px 6px rgba(0,0,0,0.2); font-weight: 500;">
+                      ${config.prayer_content}
+                    </p>
+                  </div>
+                  
+                  <div style="display: flex; justify-content: center; gap: ${baseSize * 1.5}px; margin-top: ${baseSize * 2.5}px; flex-wrap: wrap;">
+                    <div style="background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); padding: ${baseSize * 0.8}px ${baseSize * 1.8}px; border-radius: 25px; font-size: ${baseSize * 0.9}px; font-weight: 700; border: 2px solid rgba(255,255,255,0.3);">
+                      🙏 감사
+                    </div>
+                    <div style="background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); padding: ${baseSize * 0.8}px ${baseSize * 1.8}px; border-radius: 25px; font-size: ${baseSize * 0.9}px; font-weight: 700; border: 2px solid rgba(255,255,255,0.3);">
+                      ✨ 순종
+                    </div>
+                    <div style="background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); padding: ${baseSize * 0.8}px ${baseSize * 1.8}px; border-radius: 25px; font-size: ${baseSize * 0.9}px; font-weight: 700; border: 2px solid rgba(255,255,255,0.3);">
+                      💫 변화
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // 문서가 로드되면 실행
+    document.addEventListener('DOMContentLoaded', () => {
+      renderApp();
+    });
+  </script>
+</body>
+</html>
