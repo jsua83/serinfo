@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>물이 변하여 포도주 됐네 - 요한복음 2:1~11</title>
+    <meta name="description" content="요한복음 2장 1-11절 설교 말씀: 맹물 같은 인생이 예수님을 만나 포도주처럼 변화되는 기적과 그 목적에 대하여.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #722F37; /* Wine Red */
+            --secondary-color: #1a252f; /* Dark Navy */
+            --accent-color: #3498db; /* Water Blue */
+            --bg-color: #ffffff; /* White */
+            --text-color: #2c3e50;
+            --header-bg: #fdfbf7; /* Warm light bg for header */
+            
+            /* Section Backgrounds */
+            --section-bg-1: #ffffff;
+            --section-bg-2: #f8f9fa; /* Light Gray */
+            --section-bg-3: rgba(52, 152, 219, 0.05); /* Very Light Blue */
+            --section-bg-4: rgba(114, 47, 55, 0.03); /* Very Light Wine */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Serif KR', serif;
+            background-color: #eff1f3;
+            color: var(--text-color);
+            line-height: 1.8;
+            font-size: 17px;
+            word-break: keep-all;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: var(--bg-color);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        /* Header Design (Title Card) */
+        header {
+            text-align: center;
+            padding: 60px 40px;
+            background-color: var(--header-bg);
+            border-bottom: 4px solid var(--primary-color); /* Bottom border for distinction */
+            position: relative;
+        }
+
+        /* Decorative top accent */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background-color: var(--primary-color);
+        }
+
+        h1 {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 2.4rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .scripture-ref {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1rem;
+            color: #666;
+            display: block; /* Force new line */
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .intro-text {
+            display: inline-block;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1.15rem;
+            color: var(--secondary-color);
+            padding: 15px 30px;
+            background-color: #fff;
+            border: 2px solid rgba(114, 47, 55, 0.15); /* Distinct border */
+            border-radius: 50px;
+            font-weight: 600;
+            line-height: 1.4;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        
+        @media (max-width: 768px) {
+            .intro-text {
+                border-radius: 15px;
+                padding: 20px;
+                font-size: 1.05rem;
+                width: 100%;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Content Sections */
+        section {
+            padding: 50px 60px;
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+        }
+
+        /* Color Themes for Sections */
+        .section-intro { background-color: var(--section-bg-1); }
+        .section-science { background-color: var(--section-bg-2); }
+        .section-sign { background-color: var(--section-bg-3); }
+        .section-faith { background-color: var(--section-bg-1); }
+        .section-purpose { background-color: var(--section-bg-4); }
+
+        p {
+            margin-bottom: 1.6rem;
+            text-align: justify;
+            color: #444;
+        }
+        
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 24px;
+            background-color: var(--accent-color);
+            margin-right: 12px;
+            border-radius: 2px;
+        }
+
+        .section-sign h2::before { background-color: var(--accent-color); }
+        .section-purpose h2::before { background-color: var(--primary-color); }
+
+        strong {
+            color: var(--primary-color);
+            font-weight: 700;
+            background: linear-gradient(180deg, transparent 70%, rgba(114, 47, 55, 0.1) 70%);
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background-color: #fff;
+            border-left: 4px solid var(--primary-color);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .highlight-box h3 {
+            font-family: 'Noto Sans KR', sans-serif;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-size: 1.05rem;
+            color: #333;
+        }
+
+        /* Prayer Section Modified */
+        .prayer-section {
+            padding: 70px 50px;
+            /* 옅은 녹색 바탕 (Sage/Muted Green) - 흰색 글씨가 보이도록 적당한 채도 유지 */
+            background-color: #6aa875; 
+            color: #ffffff;
+            text-align: center;
+            border-top: none; /* Removed accent border to keep it clean */
+        }
+
+        .prayer-section h3 {
+            font-family: 'Noto Sans KR', sans-serif;
+            margin-bottom: 30px;
+            color: #ffffff; /* 흰색으로 변경 */
+            font-size: 1.35rem;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .prayer-section p {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #ffffff; /* 흰색으로 변경 */
+            font-size: 1.1rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #f2f2f2;
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            .container { margin: 0; border-radius: 0; }
+            header, section, .prayer-section { padding: 50px 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>물이 변하여 포도주 됐네</h1>
+            <span class="scripture-ref">요한복음 2:1~11</span>
+            <div class="intro-text">
+                "맹물 같은 인생이 예수님을 만나면 포도주 같은 인생이 됩니다."
+            </div>
+        </header>
+
+        <article>
+            <section class="section-intro">
+                <p>
+                    요한복음을 기록한 목적은 예수님이 하나님의 아들이라는 것을 알고 믿어 생명을 얻게 하기 위함입니다. 오늘 말씀을 통해 예수님이 누구신지 분명히 아는 은혜가 있기를 소원합니다.
+                </p>
+                <p>
+                    갈릴리 가나의 혼인 잔치에서 포도주가 떨어지는 난감한 상황이 벌어졌습니다. 예수님은 처음에는 때가 이르지 않았다고 하셨지만, 결국 도우시며 <strong>맹물을 포도주로 바꾸어 주셨습니다.</strong>
+                </p>
+                <p>
+                    사람들은 그 맛에 감탄했습니다. 주인이 준비한 것보다 훨씬 더 좋은 포도주가 되었습니다. 이 기적을 통해 제자들은 예수님을 메시아로 믿게 되었습니다.
+                </p>
+            </section>
+
+            <section class="section-science">
+                <h2>창조주만이 하실 수 있는 변화</h2>
+                <p>
+                    성경에는 물이 포도주로 변하거나(화학적 변화), 오병이어의 기적(질량 보존 법칙 초월), 물 위를 걷는 일(부력 법칙 초월) 등 과학적으로 믿기 힘든 사건들이 기록되어 있습니다.
+                </p>
+                <p>
+                    그러나 깨질 수 없는 자연 법칙이 깨졌다면, 그리고 그것이 사실이라면, 그 기적을 행하신 분은 <strong>그 법칙을 만드신 창조주</strong>이십니다. 예수님이 하나님의 아들이심을 믿으면 이 모든 기적은 자연스러운 일이 됩니다. 내가 믿지 못했던 것은 과학 지식 때문이 아니라, 예수님이 누구신지 몰랐기 때문입니다.
+                </p>
+            </section>
+
+            <section class="section-sign">
+                <h2>표적(Sign): 맹물 인생의 반전</h2>
+                <div class="highlight-box">
+                    <h3>표적의 의미</h3>
+                    <p>
+                        성경은 이것을 단순한 기적이 아니라 <strong>'표적(Sign)'</strong>이라고 합니다. 표적은 무언가를 가리키는 것입니다. 즉, 이 사건은 예수님이 하나님의 아들이라는 사실과, 앞으로 예수님이 하실 모든 일이 이와 같이 '변화시키는 일'임을 보여주는 사인입니다.
+                    </p>
+                </div>
+                <p>
+                    항아리에 담긴 물은 본래 손을 씻고 버려질 '결례의 물'이었습니다. 하지만 예수님을 만나 포도주로 변하여 잔치의 주인공이 되었습니다. 이처럼 맹물 같고 버려질 인생이라도 예수님을 만나면 포도주처럼 귀하게 쓰임 받는 인생이 되는 줄 믿습니다.
+                </p>
+                <p>
+                    "내가 너를 무화과나무 아래에서 보았다 함으로 믿느냐? 이보다 더 큰 일을 보리라." 나다나엘에게 약속하신 그 '더 큰 일'이 바로 변화의 역사입니다.
+                </p>
+            </section>
+
+            <section class="section-faith">
+                <h2>부족함은 하나님의 기회입니다</h2>
+                <p>
+                    기적은 "포도주가 떨어진지라"는 결핍에서 시작되었습니다. 만약 준비한 것이 충분했다면 기적은 없었을 것입니다. 때로 우리의 부족함은 하나님이 역사하시는 통로가 됩니다.
+                </p>
+                <p>
+                    결혼식에서 포도주가 떨어진 것은 신랑에게 큰 위기였습니다. 우리도 나름 최선을 다해 인생을 준비하지만, 턱없이 부족할 때가 많습니다. 바로 그때가 예수님이 일하실 때입니다. <strong>내가 준비한 것보다 주님이 만들어주신 인생이 훨씬 더 풍성하고 아름답습니다.</strong>
+                </p>
+                <br>
+                <h2>믿음은 '동사'입니다</h2>
+                <p>
+                    "너희에게 무슨 말씀을 하시든지 그대로 하라."(5절) 하인들은 이해할 수 없는 명령에 순종했습니다. 물을 채우는 것까지는 쉽지만, 맹물을 떠서 연회장에게 갖다 주는 것은 상식을 뛰어넘는 믿음이 필요했습니다.
+                </p>
+                <p>
+                    믿음은 내 상식을 뛰어넘어 말씀에 반응하는 <strong>동사</strong>입니다. "하나님은 위대하시다"라는 형용사에 머무르지 마십시오. 말씀을 듣고(Listen), 행하는(Act) 동사의 믿음이 기적을 만듭니다.
+                </p>
+            </section>
+
+            <section class="section-purpose">
+                <h2>변화의 목적: 쓰임 받기 위함</h2>
+                <p>
+                    주님은 말씀만으로도 기적을 행하실 수 있지만, 굳이 하인들을 시켜 물을 떠오게 하셨습니다. 이는 우리를 하나님의 영광에 동참시키기 위함입니다.
+                </p>
+                <div class="highlight-box">
+                    <h3>변화의 목적</h3>
+                    <p>
+                        하나님이 맹물 같은 우리를 포도주로 변화시키시는 이유는 <strong>하나님 나라의 잔치에 우리를 사용하시기 위함</strong>입니다. 은혜만 받고 끝나는 것이 아니라, "주님, 저를 써 주시옵소서"라고 고백하는 삶이 되어야 합니다.
+                    </p>
+                </div>
+                <p>
+                    경계해야 할 것은, 포도주 같았던 인생도 하나님을 떠나면 다시 맹물이 될 수 있다는 점입니다. 삼손처럼 능력이 떠난 줄도 모르고 살아가는 비극이 없어야 합니다. 끝까지 주님 곁에 머물러 그 맛과 향을 지켜야 합니다.
+                </p>
+            </section>
+        </article>
+
+        <div class="prayer-section">
+            <h3>함께 기도하겠습니다</h3>
+            <p>
+                예수님의 말씀으로 맹물 같은 제 인생이<br>
+                향기로운 포도주로 변화됨을 믿습니다.
+            </p>
+            <p>
+                오늘도 일할 자를 찾으시는 주님,<br>
+                믿음은 동사이기에 "주님, 제가 여기 있으니 나를 보내소서" 고백합니다.
+            </p>
+            <p>
+                주님과 동행하며 변질되지 않는 포도주의 삶으로<br>
+                하나님 나라 잔치에 귀하게 쓰임 받게 하옵소서.<br>
+                예수님의 이름으로 기도드립니다. 아멘.
+            </p>
+        </div>
+
+        <footer>
+            &copy; 2026 말씀묵상. 푸른동산 지산교회 정재학 목사
+        </footer>
+    </div>
+
+</body>
+</html>
