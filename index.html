@@ -3,91 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>정재학 AI 설교 인포그래픽 정보 서비스</title>
+    <title>말씀 인덱스 - 성경 순서 정렬</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 600px; margin: 0 auto; background-color: #f4f4f9; }
-        h1 { color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 10px; }
-        ul { list-style: none; padding: 0; }
-        li { background: white; margin: 10px 0; padding: 15px; border-radius: 8px; shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        a { text-decoration: none; color: #3498db; font-weight: bold; font-size: 1.1em; }
-        a:hover { color: #2980b9; }
-        .description { font-size: 0.9em; color: #666; margin-top: 5px; }
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f8fafc; }
+        .dashboard-card { transition: transform 0.2s; }
+        .dashboard-card:hover { transform: translateY(-2px); }
     </style>
 </head>
-<body>
-    <h1>📖 정재학 설교 인포그래픽 정보 자료실</h1>
-    <p>원하시는 자료를 선택해 주세요.</p>
-    
-    <ul>
-        <li>
-            <a href="./luke010104fact.html/">누가복음 설교 01(luke010104fact)</a>
-            <div class="description">누가복음 1장 1절~4절 더 확실하게.</div>
+<body class="p-6 sm:p-10">
 
-            <a href="./luke010517time.html/">누가복음 설교 02(luke010517time)</a>
-            <div class="description">누가복음 1장 5절~17절 어둠을 바꾸는 하나님의 시간.</div>
-            
-            <a href="./luke011838gracefaith.html/">누가복음 설교 03(luke011838gracefaith)</a>
-            <div class="description">누가복음 1장 18절~38절 은혜를 대하는 믿음의 자세.</div>
-            
-            <a href="./luke013980praiserelay.html/">누가복음 설교 04(luke013980praiserelay)</a>
-            <div class="description">누가복음 1장 39절~80절 마리아와 엘리사벳의 만남 .</div>
-            
-            <a href="./John010118.html/">요한복음 설교 01(John010118)</a>
-            <div class="description">요한복음 1장 1절~18절 예수, 가장 귀한 그 이름.</div>
+    <div class="max-w-6xl mx-auto">
+        <header class="mb-10 border-b pb-6 border-slate-200">
+            <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 tracking-tight">📖 정재학 설교 인포 그래픽 정보 자료실</h1>
+            <p class="text-slate-500 mt-3 text-lg">말씀 제목과 성경 본문이 최신 설교(역순)부터 정리되어 있습니다.</p>
+        </header>
 
-            <a href="./John011942.html/">요한복음 설교 02(John011942)</a>
-            <div class="description">요한복음 1장 19절~42절 보라, 믿으라, 따르라.</div>
-
-            <a href="./John013542.html/">요한복음 설교 03(John013542)</a>
-            <div class="description">요한복음 1장 35절~42절 무엇을 구하느냐? 와서 보라!</div>
-
-            <a href="./John014351.html/">요한복음 설교 04(John014351)</a>
-            <div class="description">요한복음 1장 43절~51절 나를 따르라!</div>
-
-            <a href="./John020111.html/">요한복음 설교 05(John020111)</a>
-            <div class="description">요한복음 2장 1절~11절 물이 변화여 포도주 됐네</div>
-
-            <a href="./John021325.html/">요한복음 설교 06(John021325)</a>
-            <div class="description">요한복음 2장 13절~25절 성전을 깨끗게 하신 예수님</div>
-
-            <a href="./John030121.html/">요한복음 설교 07(John030121)</a>
-            <div class="description">요한복음 3장 1절~21절 반드시 거듭나야 하리라</div>
-
-            <a href="./John032236.html/">요한복음 설교 08(John032236)</a>
-            <div class="description">요한복음 3장 22절~36절 기쁨을 빼앗기지 않는 비결.</div>
-   
-            <a href="./John040315.html/">요한복음 설교 09(John040315)</a>
-            <div class="description">요한복음 4장 3절~15절 사마리아여인, 은혜와 변화.</div>
-                        
-            <a href="./John042126.html/">요한복음 설교 10(John042126)</a>
-            <div class="description">요한복음 4장 21절~26절 신령과 진정으로.</div>
-
-            
-            <a href="./John042742.html/">요한복음 설교 11(John042742)</a>
-            <div class="description">요한복음 4장 27절~42절 영의 양식이 있습니까?</div>
-            
-            <a href="./John0427421.html/">요한복음 설교 11(John0427421)</a>
-            <div class="description">요한복음 4장 27절~42절 영의 양식이 있습니까?</div>
-        </li>
-        
-        </ul>
-
-    <!-- 푸터 영역 -->
-    <footer>
-        <div class="inner-container">
-
-            © 2026 말씀묵상. 푸른동산 지산교회 정재학 목사
+        <!-- 데이터가 렌더링될 컨테이너 (3단 그리드로 변경하여 더 보기 좋게 구성) -->
+        <div id="dashboard-container" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <!-- 자바스크립트를 통해 여기에 목록이 삽입됩니다. -->
         </div>
-    </footer>
+    </div>
 
+    <script>
+        // 1. 전달해주신 파일 이름과 상세 설명서 데이터를 명시적으로 매핑 (최신/역순 정렬 적용)
+        const sermonList = [
+            { filename: "John0427421.html", series: "요한복음 설교 11", passage: "요한복음 4장 27절~42절", title: "영의 양식이 있습니까? (2)" },
+            { filename: "John042742.html", series: "요한복음 설교 11", passage: "요한복음 4장 27절~42절", title: "영의 양식이 있습니까?" },
+            { filename: "John042126.html", series: "요한복음 설교 10", passage: "요한복음 4장 21절~26절", title: "신령과 진정으로" },
+            { filename: "John040315.html", series: "요한복음 설교 09", passage: "요한복음 4장 3절~15절", title: "사마리아여인, 은혜와 변화" },
+            { filename: "John032236.html", series: "요한복음 설교 08", passage: "요한복음 3장 22절~36절", title: "기쁨을 빼앗기지 않는 비결" },
+            { filename: "John030121.html", series: "요한복음 설교 07", passage: "요한복음 3장 1절~21절", title: "반드시 거듭나야 하리라" },
+            { filename: "John021325.html", series: "요한복음 설교 06", passage: "요한복음 2장 13절~25절", title: "성전을 깨끗게 하신 예수님" },
+            { filename: "John020111.html", series: "요한복음 설교 05", passage: "요한복음 2장 1절~11절", title: "물이 변하여 포도주 됐네" },
+            { filename: "John014351.html", series: "요한복음 설교 04", passage: "요한복음 1장 43절~51절", title: "나를 따르라!" },
+            { filename: "John013542.html", series: "요한복음 설교 03", passage: "요한복음 1장 35절~42절", title: "무엇을 구하느냐? 와서 보라!" },
+            { filename: "John011942.html", series: "요한복음 설교 02", passage: "요한복음 1장 19절~42절", title: "보라, 믿으라, 따르라" },
+            { filename: "John010118.html", series: "요한복음 설교 01", passage: "요한복음 1장 1절~18절", title: "예수, 가장 귀한 그 이름" },
+            { filename: "luke013980praiserelay.html", series: "누가복음 설교 04", passage: "누가복음 1장 39절~80절", title: "마리아와 엘리사벳의 만남" },
+            { filename: "luke011838gracefaith.html", series: "누가복음 설교 03", passage: "누가복음 1장 18절~38절", title: "은혜를 대하는 믿음의 자세" },
+            { filename: "luke010517time.html", series: "누가복음 설교 02", passage: "누가복음 1장 5절~17절", title: "어둠을 바꾸는 하나님의 시간" },
+            { filename: "luke010104fact.html", series: "누가복음 설교 01", passage: "누가복음 1장 1절~4절", title: "더 확실하게" }
+        ];
+
+        // 2. 데이터를 순회하며 예쁜 카드 디자인으로 화면에 렌더링
+        function renderDashboard() {
+            const container = document.getElementById('dashboard-container');
+            container.innerHTML = '';
+
+            sermonList.forEach(item => {
+                // 성경(누가/요한)에 따라 뱃지 색상을 다르게 지정하여 직관성 확보
+                const badgeClass = item.series.includes("누가복음") 
+                    ? "bg-sky-100 text-sky-700" 
+                    : "bg-indigo-100 text-indigo-700";
+
+                const cardHtml = `
+                    <a href="${item.filename}" target="_blank" class="block bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-blue-400 transition-all p-5 duration-200">
+                        <div class="flex flex-col h-full">
+                            <div class="mb-3">
+                                <span class="text-xs font-bold px-2.5 py-1 rounded-md ${badgeClass}">
+                                    ${item.series}
+                                </span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2 leading-tight break-keep">
+                                ${item.title}
+                            </h3>
+                            <p class="text-slate-500 text-sm font-medium mb-5">
+                                ${item.passage}
+                            </p>
+                            <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
+                                <span class="text-xs text-slate-400 font-mono">
+                                    ${item.filename}
+                                </span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                `;
+                container.innerHTML += cardHtml;
+            });
+        }
+
+        // 3. 페이지가 로드되면 렌더링 함수 실행
+        document.addEventListener('DOMContentLoaded', renderDashboard);
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
