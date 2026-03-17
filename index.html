@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>정재학 말씀 인덱스 - 성경 순서 정렬</title>
+    <title>말씀 인덱스 - 성경 순서 정렬</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
@@ -15,15 +15,9 @@
 <body class="p-6 sm:p-10">
 
     <div class="max-w-6xl mx-auto">
-        <!-- Flexbox와 개별 태그의 text-center를 추가하여 강제 중앙 정렬 -->
-        <header class="mb-10 border-b pb-6 border-slate-200 flex flex-col items-center justify-center text-center">
-            <!-- 이모지가 잘리지 않도록 flex와 span으로 명확히 분리 -->
-            <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 tracking-tight w-full flex justify-center items-center flex-wrap gap-2">
-                <span class="inline-block">📖</span>
-                <span>정재학 설교 인포 그래픽 정보 자료실</span>
-                <span class="inline-block">📖</span>
-            </h1>
-            <p class="text-slate-500 mt-3 text-lg text-center w-full">원하시는 자료를 선택해 주세요.</p>
+        <header class="mb-10 border-b pb-6 border-slate-200">
+            <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 tracking-tight">📖 정재학 설교 인포 그래픽 정보 자료실</h1>
+            <p class="text-slate-500 mt-3 text-lg">말씀 제목과 성경 본문이 최신 설교(역순)부터 정리되어 있습니다.</p>
         </header>
 
         <!-- 데이터가 렌더링될 컨테이너 (3단 그리드로 변경하여 더 보기 좋게 구성) -->
@@ -65,7 +59,7 @@
                     : "bg-indigo-100 text-indigo-700";
 
                 const cardHtml = `
-                    <a href="${item.filename}" target="_blank" class="block bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-blue-400 transition-all p-5 duration-200 dashboard-card">
+                    <a href="${item.filename}" target="_blank" class="block bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-blue-400 transition-all p-5 duration-200">
                         <div class="flex flex-col h-full">
                             <div class="mb-3">
                                 <span class="text-xs font-bold px-2.5 py-1 rounded-md ${badgeClass}">
@@ -79,10 +73,10 @@
                                 ${item.passage}
                             </p>
                             <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
-                                <span class="text-xs text-slate-400 font-mono break-all">
+                                <span class="text-xs text-slate-400 font-mono">
                                     ${item.filename}
                                 </span>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-300 shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                                 </svg>
                             </div>
