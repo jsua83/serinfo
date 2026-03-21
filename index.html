@@ -20,7 +20,6 @@
 <body class="p-6 sm:p-10">
 
     <div class="max-w-6xl mx-auto">
-        <!-- 헤더 영역 -->
         <header class="mb-10 border-b pb-6 border-slate-200 flex flex-col items-center justify-center text-center">
             <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 tracking-tight w-full flex justify-center items-center flex-wrap gap-2">
                 <span class="inline-block">📖</span>
@@ -30,34 +29,27 @@
             <p class="text-slate-500 mt-3 text-lg text-center w-full">원하는 말씀문서와 그래픽을 클릭하세요.</p>
         </header>
 
-        <!-- 통합 데이터 그리드 -->
         <div id="dashboard-container" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <!-- 자바스크립트를 통해 여기에 목록이 삽입됩니다. -->
-        </div>
+            </div>
         
         <footer class="mt-16 pt-8 border-t border-slate-200 text-center text-slate-400 text-sm">
             <p>© 정재학 말씀 인덱스. All rights reserved.</p>
         </footer>
     </div>
 
-    <!-- 🌟 1. 이미지 확대 팝업(모달) 영역 🌟 -->
     <div id="image-modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-90 flex items-center justify-center p-4 modal-animate" onclick="closeModal()">
         <button onclick="closeModal()" class="absolute top-4 right-4 sm:top-8 sm:right-8 text-white text-4xl sm:text-5xl hover:text-gray-300 focus:outline-none">&times;</button>
         <img id="modal-image" src="" alt="확대된 인포그래픽" class="max-w-full max-h-full rounded-lg shadow-2xl object-contain border-2 border-slate-700" onclick="event.stopPropagation();">
     </div>
 
-    <!-- 🌟 2. HTML 말씀 문서 전용 팝업(모달) 영역 🌟 -->
     <div id="html-modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-70 flex items-center justify-center p-2 sm:p-6 modal-animate" onclick="closeHtmlModal()">
-        <!-- 팝업창 하얀 배경 영역 -->
         <div class="relative w-full max-w-4xl h-[90vh] bg-white rounded-xl shadow-2xl flex flex-col overflow-hidden" onclick="event.stopPropagation();">
             
-            <!-- 팝업창 상단 헤더 (닫기 버튼) -->
             <div class="bg-slate-100 border-b border-slate-200 px-4 py-3 flex justify-between items-center">
                 <span class="font-bold text-slate-700 flex items-center gap-2">📖 말씀 문서 읽기</span>
                 <button onclick="closeHtmlModal()" class="text-slate-400 hover:text-red-500 text-3xl font-bold leading-none focus:outline-none">&times;</button>
             </div>
             
-            <!-- 문서가 들어갈 프레임 공간 -->
             <div class="flex-grow w-full relative bg-white">
                 <div class="absolute inset-0 flex items-center justify-center text-slate-400 -z-10">로딩 중...</div>
                 <iframe id="modal-iframe" src="" class="w-full h-full border-none"></iframe>
@@ -68,11 +60,26 @@
     <script>
         const sermonData = [
             { 
+                series: "요한복음 설교 12", passage: "요한복음 4장 43절~54절", title: "예수님의 표적",
+                images: [{ title: "핵심 그래픽", file: "John044354info.png" }, { title: "요약", file: "John044354info1.png" }],
+                links: [
+                    { title: "📖 말씀 문서 보기", file: "John044354.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
+                    { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1zuQUlqDgyePsCi_-ceFAilZPem6T46Og/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" },
+                    { title: "🎬 영상 자료 보기", file: "https://drive.google.com/file/d/1yEDRQH-zyPTrVU92WVsMxVJcFPllkmZw/view?usp=drive_link", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
+                    { title: "🎧 음성 자료 듣기", file: "https://drive.google.com/file/d/1OsGn1SmAsVlht-veJmB9pCjYH15H2zUg/view?usp=drive_link", colorClass: "text-purple-700 bg-purple-50 border-purple-200 hover:bg-purple-100 hover:border-purple-400" },
+                    { title: "🙏 개인 큐티 자료", file: "https://drive.google.com/file/d/17EjgRe4iBkCSbwcbP5T5y-gRlv2abJIT/view?usp=drive_link", colorClass: "text-emerald-700 bg-emerald-50 border-emerald-200 hover:bg-emerald-100 hover:border-emerald-400" },
+                    { title: "📝 성경 공부 자료", file: "https://drive.google.com/file/d/1QCRCJFQr1Pv-kwTXT_7dhfHB43imYi5q/view?usp=drive_link", colorClass: "text-amber-700 bg-amber-50 border-amber-200 hover:bg-amber-100 hover:border-amber-400" }
+                ]
+            },
+            { 
                 series: "요한복음 설교 11", passage: "요한복음 4장 27절~42절", title: "영의 양식이 있습니까?",
                 images: [{ title: "핵심 그래픽", file: "John042742info.png" }, { title: "요약", file: "John042742info1.png" }],
                 links: [
                     { title: "📖 말씀 문서 보기", file: "John042742.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
+                    { title: "🎬 설교 영상 보기", file: "https://youtu.be/cYLLRAH9L8I?si=mHi3Jc8PTeXkuPMy", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
                     { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1o5g93lpEcxvr4JexEgUOIm_uGJoSSaQp/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" },
+                    { title: "🎬 영상 자료 보기", file: "https://drive.google.com/file/d/1IKrTjoBsRKQ3B61O3Kl2MRboQUo7wauf/view?usp=drive_link", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
+                    { title: "🎧 음성 자료 듣기", file: "https://drive.google.com/file/d/1nygjCkPXhq4e_0STo73SGfj1-tiSMJkW/view?usp=drive_link", colorClass: "text-purple-700 bg-purple-50 border-purple-200 hover:bg-purple-100 hover:border-purple-400" },
                     { title: "🙏 개인 큐티 자료", file: "https://drive.google.com/file/d/17MEGrvCE5gVcEkF8wGQwj0LlAcERy2bh/view?usp=drive_link", colorClass: "text-emerald-700 bg-emerald-50 border-emerald-200 hover:bg-emerald-100 hover:border-emerald-400" },
                     { title: "📝 성경 공부 자료", file: "https://drive.google.com/file/d/1DfzsXa-CeSv2Fd8OPJDOoPXN2R0HCLzz/view?usp=drive_link", colorClass: "text-amber-700 bg-amber-50 border-amber-200 hover:bg-amber-100 hover:border-amber-400" }
                 ]
@@ -82,7 +89,10 @@
                 images: [{ title: "핵심 그래픽", file: "John042126info.png" }, { title: "요약", file: "John042126info1.png" }],
                 links: [
                     { title: "📖 말씀 문서 보기", file: "John042126.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
+                    { title: "🎬 설교 영상 보기", file: "https://youtu.be/ajDrciCJ-XU?si=7sv9pKAEvy8xbLjp", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
                     { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1QQfzefDV7nfSQb7lgpkbLT5xQc0sivoY/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" },
+                    { title: "🎬 영상 자료 보기", file: "https://drive.google.com/file/d/16E-2Rv3m39GhfMzswVmmdueNxSAB37ez/view?usp=drive_link", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
+                    { title: "🎧 음성 자료 듣기", file: "https://drive.google.com/file/d/1XiB1i3wZbk8aT8mspPitJqn8bP21OLQj/view?usp=drive_link", colorClass: "text-purple-700 bg-purple-50 border-purple-200 hover:bg-purple-100 hover:border-purple-400" },
                     { title: "🙏 개인 큐티 자료", file: "https://drive.google.com/file/d/1wxMlrXEpddw73uLs4FQBf9pw-PhFtBBa/view?usp=drivesdk", colorClass: "text-emerald-700 bg-emerald-50 border-emerald-200 hover:bg-emerald-100 hover:border-emerald-400" },
                     { title: "📝 성경 공부 자료", file: "https://drive.google.com/file/d/1ElJ0B2MGSO7hAJ7nwmTqY3EiCQheB9_J/view?usp=drivesdk", colorClass: "text-amber-700 bg-amber-50 border-amber-200 hover:bg-amber-100 hover:border-amber-400" }
                 ]
@@ -92,7 +102,10 @@
                 images: [{ title: "핵심 그래픽", file: "John040315info.png" }, { title: "요약", file: "John040315info1.png" }], 
                 links: [
                     { title: "📖 말씀 문서 보기", file: "John040315.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
+                    { title: "🎬 설교 영상 보기", file: "https://youtu.be/xswN9de-IoI?si=NRCFNnxRwWji3KPC", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
                     { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1ZDJeVVl3fd8voTu9jV1airiP6fAZovZR/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" },
+                    { title: "🎬 영상 자료 보기", file: "https://drive.google.com/file/d/1Nw_57gD3Sv-x8r6BXBJbbfc6AWQWT9AO/view?usp=drive_link", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
+                    { title: "🎧 음성 자료 듣기", file: "https://drive.google.com/file/d/1WUxXIhpEXYKbakeiBbxIoW9jw77dCJGR/view?usp=drive_link", colorClass: "text-purple-700 bg-purple-50 border-purple-200 hover:bg-purple-100 hover:border-purple-400" },
                     { title: "🙏 개인 큐티 자료", file: "https://drive.google.com/file/d/1yipjaxeixWkRqm5IZ4w7_NIV4jqUcqPf/view?usp=drivesdk", colorClass: "text-emerald-700 bg-emerald-50 border-emerald-200 hover:bg-emerald-100 hover:border-emerald-400" },
                     { title: "📝 성경 공부 자료", file: "https://drive.google.com/file/d/1DgshHevBCkhHHwe-rOt1ZaWXMv1ykMrg/view?usp=drivesdk", colorClass: "text-amber-700 bg-amber-50 border-amber-200 hover:bg-amber-100 hover:border-amber-400" }
                 ]
@@ -102,6 +115,7 @@
                 images: [{ title: "핵심 그래픽", file: "John032236info.png" }, { title: "요약", file: "John032236info1.png" }],
                 links: [
                     { title: "📖 말씀 문서 보기", file: "John032236.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
+                    { title: "🎬 설교 영상 보기", file: "https://youtu.be/KDWODfa-Oys?si=4z6li9F7E8FQiyxv", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
                     { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1UZjYCrwZ9HfnQRO8Ei8OGaHMcL6ecSPz/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" },
                     { title: "🙏 개인 큐티 자료", file: "https://drive.google.com/file/d/1tAc7ahg0HLaWuo0B8ucuW2ZkcXIIDQ9V/view?usp=drive_link", colorClass: "text-emerald-700 bg-emerald-50 border-emerald-200 hover:bg-emerald-100 hover:border-emerald-400" },
                     { title: "📝 성경 공부 자료", file: "https://drive.google.com/file/d/1O0Hr29XYDf3HHn3IsfzqPiqtWqePDn57/view?usp=drive_link", colorClass: "text-amber-700 bg-amber-50 border-amber-200 hover:bg-amber-100 hover:border-amber-400" }
@@ -112,6 +126,7 @@
                 images: [{ title: "핵심 그래픽", file: "John030121info.png" }, { title: "요약", file: "John030121info1.png" }],
                 links: [
                     { title: "📖 말씀 문서 보기", file: "John030121.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
+                    { title: "🎬 설교 영상 보기", file: "https://youtu.be/wqIcs5FIoEc?si=V3MCPnO_Io_f02do", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
                     { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1t5udzamnxNW0sKhCA4ScR3MYvePV4TZ2/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" }
                 ]
             },
@@ -209,7 +224,7 @@
             document.body.style.overflow = 'auto'; 
         }
 
-        // 🌟 HTML 문서 모달 함수 (새로 추가됨)
+        // 🌟 HTML 문서 모달 함수
         function openHtmlModal(docSrc) {
             document.getElementById('modal-iframe').src = docSrc;
             document.getElementById('html-modal').classList.remove('hidden');
@@ -218,7 +233,7 @@
 
         function closeHtmlModal() {
             document.getElementById('html-modal').classList.add('hidden');
-            document.getElementById('modal-iframe').src = ''; // 닫을 때 내용 초기화
+            document.getElementById('modal-iframe').src = ''; 
             document.body.style.overflow = 'auto'; 
         }
 
