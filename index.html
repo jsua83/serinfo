@@ -60,10 +60,23 @@
     <script>
         const sermonData = [
             { 
-                series: "마태복음 설교 01", passage: "마태복음 28장 5절~7절", title: "부활주일-천사의 명령",
+                series: "요한복음 설교 14", passage: "요한복음 5장 16절~29절", title: "안식일, 아버지와 아들",
+                images: [{ title: "핵심 그래픽", file: "John051629info.png" }, { title: "요약", file: "John051629info1.png" }],
+                links: [
+                    { title: "📖 말씀 문서 보기", file: "John051629.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },                   
+                    { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/14aD_ADVGuqvVdHoDOE7x0I2bRTxp66Wq/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" },
+                    { title: "🎬 영상 자료 보기", file: "https://drive.google.com/file/d/1Re_1rFjuD32vFolQLPKPzVu9miPWxr1R/view?usp=drive_link", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
+                    { title: "🎧 음성 자료 듣기", file: "https://drive.google.com/file/d/1IpRU8sj62zVrOEKfSq10ru7kP3LdjYKF/view?usp=drive_link", colorClass: "text-purple-700 bg-purple-50 border-purple-200 hover:bg-purple-100 hover:border-purple-400" },
+                    { title: "🙏 개인 큐티 자료", file: "https://drive.google.com/file/d/1BQ57f6vpDSw_EmkoyzlPrWauOfLAVFVm/view?usp=drive_link", colorClass: "text-emerald-700 bg-emerald-50 border-emerald-200 hover:bg-emerald-100 hover:border-emerald-400" },
+                    { title: "📝 성경 공부 자료", file: "https://drive.google.com/file/d/1TzMKG6xhHDnddlW3GxKePAeVDgIPFuot/view?usp=drive_link", colorClass: "text-amber-700 bg-amber-50 border-amber-200 hover:bg-amber-100 hover:border-amber-400" }
+                ]
+            },
+            { 
+                series: "2026 부활주일", passage: "마태복음 28장 5절~7절", title: "천사의 명령",
                 images: [{ title: "핵심 그래픽", file: "Mt280507info.png" }, { title: "요약", file: "Mt280507info1.png" }],
                 links: [
                     { title: "📖 말씀 문서 보기", file: "Mt280507.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
+                    { title: "🎬 설교 영상 보기", file: "https://youtu.be/oBYq5WjmT4k?si=Y-DRw0Ed4qiI7oR4", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
                     { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1xVxce6wcs6v_1PPJyW6-MWpoWW-pPf4Q/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" },
                     { title: "🎬 영상 자료 보기", file: "https://drive.google.com/file/d/1fBLrR1FdHRAK8AH4HNc04ElnUZFHT5oa/view?usp=drive_link", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
                     { title: "🎧 음성 자료 듣기", file: "https://drive.google.com/file/d/1Lk996-oeZC59CBWTS6WWP1Ev3TfGH1Gw/view?usp=drive_link", colorClass: "text-purple-700 bg-purple-50 border-purple-200 hover:bg-purple-100 hover:border-purple-400" },
@@ -266,7 +279,7 @@
         // 🌟 뱃지 색상 지정 함수 (마태복음 전용 초록색 추가!) 🌟
         function getBadgeClass(seriesName) {
             if (seriesName.includes("누가복음")) return "bg-sky-100 text-sky-700";
-            if (seriesName.includes("마태복음")) return "bg-emerald-100 text-emerald-700";
+            if (seriesName.includes("마태복음") || seriesName.includes("부활주일")) return "bg-pink-100 text-pink-700";
             return "bg-indigo-100 text-indigo-700"; // 기본값 (요한복음)
         }
 
