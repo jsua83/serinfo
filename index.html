@@ -30,7 +30,8 @@
         </header>
 
         <div id="dashboard-container" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            </div>
+            <!-- 자바스크립트를 통해 여기에 목록이 삽입됩니다. -->
+        </div>
         
         <footer class="mt-16 pt-8 border-t border-slate-200 text-center text-slate-400 text-sm">
             <p>© 정재학 말씀 인덱스. All rights reserved.</p>
@@ -60,10 +61,23 @@
     <script>
         const sermonData = [
             { 
+                series: "요한복음 설교 15", passage: "요한복음 5장 30절~47절", title: "예수를 믿게하는 증언",
+                images: [{ title: "핵심 그래픽", file: "John053047info.png" }, { title: "요약", file: "John053047info1.png" }],
+                links: [
+                    { title: "📖 말씀 문서 보기", file: "John053047.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
+                    { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1MLT0wXFBvMXOC7SYXTlfaPel708JjBZ8/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" },
+                    { title: "🎬 영상 자료 보기", file: "https://drive.google.com/file/d/1jCfE5dmbmM6xiSJHdS6IuK6oiw1DxpeT/view?usp=drive_link", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
+                    { title: "🎧 음성 자료 듣기", file: "https://drive.google.com/file/d/19fn_1-JcdHxGikagHMP7TfVecReOurWl/view?usp=drive_link", colorClass: "text-purple-700 bg-purple-50 border-purple-200 hover:bg-purple-100 hover:border-purple-400" },
+                    { title: "🙏 개인 큐티 자료", file: "https://drive.google.com/file/d/1tJNp9mGMHl-ggNZeytPUVJYzi2bFVCxH/view?usp=drive_link", colorClass: "text-emerald-700 bg-emerald-50 border-emerald-200 hover:bg-emerald-100 hover:border-emerald-400" },
+                    { title: "📝 성경 공부 자료", file: "https://drive.google.com/file/d/18CNINPll8vhqv1e0UOv5uBNZ99mB6ETE/view?usp=drive_link", colorClass: "text-amber-700 bg-amber-50 border-amber-200 hover:bg-amber-100 hover:border-amber-400" }
+                ]
+            },
+            { 
                 series: "요한복음 설교 14", passage: "요한복음 5장 16절~29절", title: "안식일, 아버지와 아들",
                 images: [{ title: "핵심 그래픽", file: "John051629info.png" }, { title: "요약", file: "John051629info1.png" }],
                 links: [
-                    { title: "📖 말씀 문서 보기", file: "John051629.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },                   
+                    { title: "📖 말씀 문서 보기", file: "John051629.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },                    
+                    { title: "🎬 설교 영상 보기", file: "https://youtu.be/ffirS5WO8a0?si=gpwDjoylyCvxMoSr", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
                     { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/14aD_ADVGuqvVdHoDOE7x0I2bRTxp66Wq/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" },
                     { title: "🎬 영상 자료 보기", file: "https://drive.google.com/file/d/1Re_1rFjuD32vFolQLPKPzVu9miPWxr1R/view?usp=drive_link", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
                     { title: "🎧 음성 자료 듣기", file: "https://drive.google.com/file/d/1IpRU8sj62zVrOEKfSq10ru7kP3LdjYKF/view?usp=drive_link", colorClass: "text-purple-700 bg-purple-50 border-purple-200 hover:bg-purple-100 hover:border-purple-400" },
