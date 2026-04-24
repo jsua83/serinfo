@@ -30,8 +30,7 @@
         </header>
 
         <div id="dashboard-container" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <!-- 자바스크립트를 통해 여기에 목록이 삽입됩니다. -->
-        </div>
+            </div>
         
         <footer class="mt-16 pt-8 border-t border-slate-200 text-center text-slate-400 text-sm">
             <p>© 정재학 말씀 인덱스. All rights reserved.</p>
@@ -61,15 +60,29 @@
     <script>
         const sermonData = [
             { 
+                series: "요한복음 설교 16", passage: "요한복음 6장 1절~15절", title: "오병이어 표적, 그 이후",
+                images: [{ title: "핵심 그래픽", file: "John060115info.png" }, { title: "요약", file: "John060115info1.png" }],
+                links: [
+                    { title: "📖 말씀 문서 보기", file: "John060115.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
+                    { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1CaMykg1FaY5kbo5ajoB1NDLSG9uDsfIo/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" },
+                    { title: "🎬 영상 자료 보기", file: "https://drive.google.com/file/d/1-kTKbbpA8E1wH7tFtrECRKmOEcAJgHu2/view?usp=drive_link", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
+                    { title: "🎧 음성 자료 듣기", file: "https://drive.google.com/file/d/1RpignFjEFyl8s58RSkO75PddMfskssls/view?usp=drive_link", colorClass: "text-purple-700 bg-purple-50 border-purple-200 hover:bg-purple-100 hover:border-purple-400" },
+                    { title: "🙏 개인 큐티 자료", file: "https://drive.google.com/file/d/17ARqM9UisF85gKS7CFpgzU0O1AeQNkUZ/view?usp=drive_link", colorClass: "text-emerald-700 bg-emerald-50 border-emerald-200 hover:bg-emerald-100 hover:border-emerald-400" },
+                    { title: "📝 성경 공부 자료", file: "https://drive.google.com/file/d/18CNINPll8vhqv1e0UOv5uBNZ99mB6ETE/view?usp=drive_link", colorClass: "text-amber-700 bg-amber-50 border-amber-200 hover:bg-amber-100 hover:border-amber-400" }
+                ]
+            },
+            { 
                 series: "요한복음 설교 15", passage: "요한복음 5장 30절~47절", title: "예수를 믿게하는 증언",
                 images: [{ title: "핵심 그래픽", file: "John053047info.png" }, { title: "요약", file: "John053047info1.png" }],
                 links: [
-                    { title: "📖 말씀 문서 보기", file: "John053047.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
+                    { title: "📖 말씀 문서 보기", file: "John053047.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },                    
+                    { title: "🎬 설교 영상 보기", file: "https://youtu.be/A-nkgd5CZDc?si=Ehe3JLXC_6OsnPqQ", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
                     { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1MLT0wXFBvMXOC7SYXTlfaPel708JjBZ8/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" },
                     { title: "🎬 영상 자료 보기", file: "https://drive.google.com/file/d/1jCfE5dmbmM6xiSJHdS6IuK6oiw1DxpeT/view?usp=drive_link", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
                     { title: "🎧 음성 자료 듣기", file: "https://drive.google.com/file/d/19fn_1-JcdHxGikagHMP7TfVecReOurWl/view?usp=drive_link", colorClass: "text-purple-700 bg-purple-50 border-purple-200 hover:bg-purple-100 hover:border-purple-400" },
                     { title: "🙏 개인 큐티 자료", file: "https://drive.google.com/file/d/1tJNp9mGMHl-ggNZeytPUVJYzi2bFVCxH/view?usp=drive_link", colorClass: "text-emerald-700 bg-emerald-50 border-emerald-200 hover:bg-emerald-100 hover:border-emerald-400" },
-                    { title: "📝 성경 공부 자료", file: "https://drive.google.com/file/d/18CNINPll8vhqv1e0UOv5uBNZ99mB6ETE/view?usp=drive_link", colorClass: "text-amber-700 bg-amber-50 border-amber-200 hover:bg-amber-100 hover:border-amber-400" }
+                    // 오타 수정됨! (따옴표 및 쉼표 추가)
+                    { title: "📝 성경 공부 자료", file: "https://drive.google.com/file/d/1LHTbiarTd7bMka_B9R-uFm8j4T0i7qTQ/view?usp=drive_link", colorClass: "text-amber-700 bg-amber-50 border-amber-200 hover:bg-amber-100 hover:border-amber-400" }
                 ]
             },
             { 
@@ -115,313 +128,4 @@
                 series: "요한복음 설교 12", passage: "요한복음 4장 43절~54절", title: "예수님의 표적",
                 images: [{ title: "핵심 그래픽", file: "John044354info.png" }, { title: "요약", file: "John044354info1.png" }],
                 links: [
-                    { title: "📖 말씀 문서 보기", file: "John044354.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
-                    { title: "🎬 설교 영상 보기", file: "https://youtu.be/Mc7GXy1oqPE?si=5xRJiBZ48VjT0Fkg", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
-                    { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1zuQUlqDgyePsCi_-ceFAilZPem6T46Og/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" },
-                    { title: "🎬 영상 자료 보기", file: "https://drive.google.com/file/d/1yEDRQH-zyPTrVU92WVsMxVJcFPllkmZw/view?usp=drive_link", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
-                    { title: "🎧 음성 자료 듣기", file: "https://drive.google.com/file/d/1OsGn1SmAsVlht-veJmB9pCjYH15H2zUg/view?usp=drive_link", colorClass: "text-purple-700 bg-purple-50 border-purple-200 hover:bg-purple-100 hover:border-purple-400" },
-                    { title: "🙏 개인 큐티 자료", file: "https://drive.google.com/file/d/17EjgRe4iBkCSbwcbP5T5y-gRlv2abJIT/view?usp=drive_link", colorClass: "text-emerald-700 bg-emerald-50 border-emerald-200 hover:bg-emerald-100 hover:border-emerald-400" },
-                    { title: "📝 성경 공부 자료", file: "https://drive.google.com/file/d/1QCRCJFQr1Pv-kwTXT_7dhfHB43imYi5q/view?usp=drive_link", colorClass: "text-amber-700 bg-amber-50 border-amber-200 hover:bg-amber-100 hover:border-amber-400" }
-                ]
-            },
-            { 
-                series: "요한복음 설교 11", passage: "요한복음 4장 27절~42절", title: "영의 양식이 있습니까?",
-                images: [{ title: "핵심 그래픽", file: "John042742info.png" }, { title: "요약", file: "John042742info1.png" }],
-                links: [
-                    { title: "📖 말씀 문서 보기", file: "John042742.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
-                    { title: "🎬 설교 영상 보기", file: "https://youtu.be/cYLLRAH9L8I?si=mHi3Jc8PTeXkuPMy", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
-                    { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1o5g93lpEcxvr4JexEgUOIm_uGJoSSaQp/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" },
-                    { title: "🎬 영상 자료 보기", file: "https://drive.google.com/file/d/1IKrTjoBsRKQ3B61O3Kl2MRboQUo7wauf/view?usp=drive_link", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
-                    { title: "🎧 음성 자료 듣기", file: "https://drive.google.com/file/d/1nygjCkPXhq4e_0STo73SGfj1-tiSMJkW/view?usp=drive_link", colorClass: "text-purple-700 bg-purple-50 border-purple-200 hover:bg-purple-100 hover:border-purple-400" },
-                    { title: "🙏 개인 큐티 자료", file: "https://drive.google.com/file/d/17MEGrvCE5gVcEkF8wGQwj0LlAcERy2bh/view?usp=drive_link", colorClass: "text-emerald-700 bg-emerald-50 border-emerald-200 hover:bg-emerald-100 hover:border-emerald-400" },
-                    { title: "📝 성경 공부 자료", file: "https://drive.google.com/file/d/1DfzsXa-CeSv2Fd8OPJDOoPXN2R0HCLzz/view?usp=drive_link", colorClass: "text-amber-700 bg-amber-50 border-amber-200 hover:bg-amber-100 hover:border-amber-400" }
-                ]
-            },
-            { 
-                series: "요한복음 설교 10", passage: "요한복음 4장 21절~26절", title: "신령과 진정으로",
-                images: [{ title: "핵심 그래픽", file: "John042126info.png" }, { title: "요약", file: "John042126info1.png" }],
-                links: [
-                    { title: "📖 말씀 문서 보기", file: "John042126.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
-                    { title: "🎬 설교 영상 보기", file: "https://youtu.be/ajDrciCJ-XU?si=7sv9pKAEvy8xbLjp", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
-                    { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1QQfzefDV7nfSQb7lgpkbLT5xQc0sivoY/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" },
-                    { title: "🎬 영상 자료 보기", file: "https://drive.google.com/file/d/16E-2Rv3m39GhfMzswVmmdueNxSAB37ez/view?usp=drive_link", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
-                    { title: "🎧 음성 자료 듣기", file: "https://drive.google.com/file/d/1XiB1i3wZbk8aT8mspPitJqn8bP21OLQj/view?usp=drive_link", colorClass: "text-purple-700 bg-purple-50 border-purple-200 hover:bg-purple-100 hover:border-purple-400" },
-                    { title: "🙏 개인 큐티 자료", file: "https://drive.google.com/file/d/1wxMlrXEpddw73uLs4FQBf9pw-PhFtBBa/view?usp=drivesdk", colorClass: "text-emerald-700 bg-emerald-50 border-emerald-200 hover:bg-emerald-100 hover:border-emerald-400" },
-                    { title: "📝 성경 공부 자료", file: "https://drive.google.com/file/d/1ElJ0B2MGSO7hAJ7nwmTqY3EiCQheB9_J/view?usp=drivesdk", colorClass: "text-amber-700 bg-amber-50 border-amber-200 hover:bg-amber-100 hover:border-amber-400" }
-                ]
-            },
-            { 
-                series: "요한복음 설교 09", passage: "요한복음 4장 3절~15절", title: "사마리아여인, 은혜와 변화",
-                images: [{ title: "핵심 그래픽", file: "John040315info.png" }, { title: "요약", file: "John040315info1.png" }], 
-                links: [
-                    { title: "📖 말씀 문서 보기", file: "John040315.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
-                    { title: "🎬 설교 영상 보기", file: "https://youtu.be/xswN9de-IoI?si=NRCFNnxRwWji3KPC", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
-                    { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1ZDJeVVl3fd8voTu9jV1airiP6fAZovZR/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" },
-                    { title: "🎬 영상 자료 보기", file: "https://drive.google.com/file/d/1Nw_57gD3Sv-x8r6BXBJbbfc6AWQWT9AO/view?usp=drive_link", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
-                    { title: "🎧 음성 자료 듣기", file: "https://drive.google.com/file/d/1WUxXIhpEXYKbakeiBbxIoW9jw77dCJGR/view?usp=drive_link", colorClass: "text-purple-700 bg-purple-50 border-purple-200 hover:bg-purple-100 hover:border-purple-400" },
-                    { title: "🙏 개인 큐티 자료", file: "https://drive.google.com/file/d/1yipjaxeixWkRqm5IZ4w7_NIV4jqUcqPf/view?usp=drivesdk", colorClass: "text-emerald-700 bg-emerald-50 border-emerald-200 hover:bg-emerald-100 hover:border-emerald-400" },
-                    { title: "📝 성경 공부 자료", file: "https://drive.google.com/file/d/1DgshHevBCkhHHwe-rOt1ZaWXMv1ykMrg/view?usp=drivesdk", colorClass: "text-amber-700 bg-amber-50 border-amber-200 hover:bg-amber-100 hover:border-amber-400" }
-                ]
-            },
-            { 
-                series: "요한복음 설교 08", passage: "요한복음 3장 22절~36절", title: "기쁨을 빼앗기지 않는 비결", 
-                images: [{ title: "핵심 그래픽", file: "John032236info.png" }, { title: "요약", file: "John032236info1.png" }],
-                links: [
-                    { title: "📖 말씀 문서 보기", file: "John032236.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
-                    { title: "🎬 설교 영상 보기", file: "https://youtu.be/KDWODfa-Oys?si=4z6li9F7E8FQiyxv", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
-                    { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1UZjYCrwZ9HfnQRO8Ei8OGaHMcL6ecSPz/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" },
-                    { title: "🙏 개인 큐티 자료", file: "https://drive.google.com/file/d/1tAc7ahg0HLaWuo0B8ucuW2ZkcXIIDQ9V/view?usp=drive_link", colorClass: "text-emerald-700 bg-emerald-50 border-emerald-200 hover:bg-emerald-100 hover:border-emerald-400" },
-                    { title: "📝 성경 공부 자료", file: "https://drive.google.com/file/d/1O0Hr29XYDf3HHn3IsfzqPiqtWqePDn57/view?usp=drive_link", colorClass: "text-amber-700 bg-amber-50 border-amber-200 hover:bg-amber-100 hover:border-amber-400" }
-                ]
-            },
-            { 
-                series: "요한복음 설교 07", passage: "요한복음 3장 1절~21절", title: "반드시 거듭나야 하리라",  
-                images: [{ title: "핵심 그래픽", file: "John030121info.png" }, { title: "요약", file: "John030121info1.png" }],
-                links: [
-                    { title: "📖 말씀 문서 보기", file: "John030121.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
-                    { title: "🎬 설교 영상 보기", file: "https://youtu.be/wqIcs5FIoEc?si=V3MCPnO_Io_f02do", colorClass: "text-red-700 bg-red-50 border-red-200 hover:bg-red-100 hover:border-red-400" },
-                    { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1t5udzamnxNW0sKhCA4ScR3MYvePV4TZ2/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" }
-                ]
-            },
-            { 
-                series: "요한복음 설교 06", passage: "요한복음 2장 13절~25절", title: "성전을 깨끗게 하신 예수님", 
-                images: [{ title: "핵심 그래픽", file: "John021325info.png" }, { title: "요약", file: "John021325info1.png" }],
-                links: [
-                    { title: "📖 말씀 문서 보기", file: "John021325.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
-                    { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1loC0pZlLZ90yB-h2j9z0tmBefMMUp4Rj/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" }
-                ]
-            },
-            { 
-                series: "요한복음 설교 05", passage: "요한복음 2장 1절~11절", title: "물이 변하여 포도주 됐네", 
-                images: [{ title: "핵심 그래픽", file: "John020111info.png" }, { title: "요약", file: "John020111info1.png" }],
-                links: [
-                    { title: "📖 말씀 문서 보기", file: "John020111.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
-                    { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1ILMItTiSxAK_9Z1OcKAK0UVgByczFEr3/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" }
-                ]
-            },
-            { 
-                series: "요한복음 설교 04", passage: "요한복음 1장 43절~51절", title: "나를 따르라!", 
-                images: [{ title: "핵심 그래픽", file: "John014351info.png" }, { title: "요약", file: "John014351info1.png" }],
-                links: [
-                    { title: "📖 말씀 문서 보기", file: "John014351.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
-                    { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1gBjPsaoGD3S8HAkzDiOuNaqqaOpnf7Kc/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" }
-                ]
-            },
-            { 
-                series: "요한복음 설교 03", passage: "요한복음 1장 35절~42절", title: "무엇을 구하느냐? 와서 보라!", 
-                images: [{ title: "핵심 그래픽", file: "John013542info.png" }, { title: "요약", file: "John013542info1.png" }],
-                links: [
-                    { title: "📖 말씀 문서 보기", file: "John013542.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
-                    { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1xD3sEWhuwe8Uo2AnS5ZYC1ZjffS6Lr-2/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" }
-                ]
-            },
-            { 
-                series: "요한복음 설교 02", passage: "요한복음 1장 19절~42절", title: "보라, 믿으라, 따르라", 
-                images: [{ title: "핵심 그래픽", file: "John011942info.png" }, { title: "요약", file: "John011942info1.png" }],
-                links: [
-                    { title: "📖 말씀 문서 보기", file: "John011942.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
-                    { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1bxVI1hJPD_2yW3eG_t0Wqw4GyAkME2UD/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" }
-                ]
-            },
-            { 
-                series: "요한복음 설교 01", passage: "요한복음 1장 1절~18절", title: "예수, 가장 귀한 그 이름", 
-                images: [{ title: "핵심 그래픽", file: "John010118info.png" }, { title: "요약", file: "John010118info1.png" }],
-                links: [
-                    { title: "📖 말씀 문서 보기", file: "John010118.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
-                    { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1PmbKZOYYcJdQXx1nAH25mzcnlrPb8cmq/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" }
-                ]
-            },
-            { 
-                series: "누가복음 설교 04", passage: "누가복음 1장 39절~80절", title: "마리아와 엘리사벳의 만남", 
-                images: [{ title: "핵심 그래픽", file: "luke013980info.png" }, { title: "요약", file: "luke013980info1.png" }],
-                links: [
-                    { title: "📖 말씀 문서 보기", file: "luke013980praiserelay.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
-                    { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1DwqUZC2wL70xhesqBZCOT4uL-vBfYY1k/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" }
-                ]
-            },
-            { 
-                series: "누가복음 설교 03", passage: "누가복음 1장 18절~38절", title: "은혜를 대하는 믿음의 자세", 
-                images: [{ title: "핵심 그래픽", file: "luke011838info.png" }, { title: "요약", file: "luke011838info1.png" }],
-                links: [
-                    { title: "📖 말씀 문서 보기", file: "luke011838gracefaith.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
-                    { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/191UGESZQjyU8GB5HSLX4BUNS0FG5DIQf/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" }
-                ]
-            },
-            { 
-                series: "누가복음 설교 02", passage: "누가복음 1장 5절~17절", title: "어둠을 바꾸는 하나님의 시간", 
-                images: [{ title: "핵심 그래픽", file: "luke010517info.png" }, { title: "요약", file: "luke010517info1.png" }],
-                links: [
-                    { title: "📖 말씀 문서 보기", file: "luke010517time.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
-                    { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1JP4VwJrFDftYQq2IKRN-QMPNwZSvL9RA/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" }
-                ]
-            },
-            { 
-                series: "누가복음 설교 01", passage: "누가복음 1장 1절~4절", title: "더 확실하게", 
-                images: [{ title: "핵심 그래픽", file: "luke010104info.png" }, { title: "요약", file: "luke010104info1.png" }],
-                links: [
-                    { title: "📖 말씀 문서 보기", file: "luke010104fact.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-400" },
-                    { title: "🖥️ 슬라이드 자료", file: "https://drive.google.com/file/d/1YWBvvkWCNTO0bdsfxBH12AFSUTmWmvHf/view?usp=drive_link", colorClass: "text-indigo-700 bg-indigo-50 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-400" }
-                ]
-            }
-        ];
-
-        // 🌟 이미지 모달 함수
-        function openModal(imageSrc) {
-            document.getElementById('modal-image').src = imageSrc;
-            document.getElementById('image-modal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; 
-        }
-
-        function closeModal() {
-            document.getElementById('image-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto'; 
-        }
-
-        // 🌟 HTML 문서 모달 함수
-        function openHtmlModal(docSrc) {
-            document.getElementById('modal-iframe').src = docSrc;
-            document.getElementById('html-modal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; 
-        }
-
-        function closeHtmlModal() {
-            document.getElementById('html-modal').classList.add('hidden');
-            document.getElementById('modal-iframe').src = ''; 
-            document.body.style.overflow = 'auto'; 
-        }
-
-        // 🌟 뱃지 색상 지정 함수 (마태복음 전용 초록색 추가!) 🌟
-        function getBadgeClass(seriesName) {
-            if (seriesName.includes("누가복음")) return "bg-sky-100 text-sky-700";
-            if (seriesName.includes("마태복음") || seriesName.includes("부활주일")) return "bg-pink-100 text-pink-700";
-            return "bg-indigo-100 text-indigo-700"; // 기본값 (요한복음)
-        }
-
-        function renderDashboard() {
-            const container = document.getElementById('dashboard-container');
-            container.innerHTML = '';
-
-            sermonData.forEach(item => {
-                const badgeClass = getBadgeClass(item.series);
-                
-                // 1. 이미지 갤러리 영역
-                let imagesHtml = '';
-                if (item.images && item.images.length > 0) {
-                    const gridClass = item.images.length === 1 ? 'grid-cols-1' : 'grid-cols-2';
-                    
-                    let imageGridHtml = '';
-                    item.images.forEach(img => {
-                        imageGridHtml += `
-                            <button onclick="openModal('${img.file}')" class="w-full text-left block relative rounded-lg overflow-hidden border border-slate-200 img-hover-zoom aspect-[4/3] bg-slate-100 group focus:outline-none">
-                                <img src="${img.file}" alt="${img.title}" class="w-full h-full object-cover" 
-                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                
-                                <div class="hidden absolute inset-0 flex-col items-center justify-center bg-slate-50 p-2 text-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="text-slate-300 mb-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                                    <span class="text-[10px] text-red-500 font-mono break-all leading-tight">
-                                        <b>${img.file}</b><br>확인 필요
-                                    </span>
-                                </div>
-
-                                <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white text-xs text-center py-1.5 font-medium">
-                                    ${img.title}
-                                </div>
-                            </button>
-                        `;
-                    });
-                    
-                    imagesHtml = `
-                        <div class="mb-5">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-sm text-slate-700 font-bold flex items-center gap-1">
-                                    🎨 말씀 인포그래픽
-                                </span>
-                                <span class="text-[11px] text-slate-400 font-medium">클릭하여 확대</span>
-                            </div>
-                            <div class="grid ${gridClass} gap-2">
-                                ${imageGridHtml}
-                            </div>
-                        </div>
-                    `;
-                }
-
-                // 2. 문서 및 구글 드라이브 자료 링크 영역
-                let linksHtml = '';
-                if (item.links && item.links.length > 0) {
-                    let buttonsHtml = '';
-                    item.links.forEach(link => {
-                        const isHtml = link.file.toLowerCase().endsWith('.html');
-                        
-                        if (isHtml) {
-                            buttonsHtml += `
-                                <button onclick="openHtmlModal('${link.file}')" class="w-full text-left group flex items-center justify-between border rounded-lg p-2.5 mb-2 transition-all focus:outline-none ${link.colorClass}">
-                                    <span class="text-[14px] font-bold flex items-center gap-2">
-                                        ${link.title}
-                                    </span>
-                                    <span class="text-[11px] font-semibold opacity-70 group-hover:opacity-100 transition-opacity">
-                                        창으로 열기 ↗
-                                    </span>
-                                </button>
-                            `;
-                        } else {
-                            buttonsHtml += `
-                                <a href="${link.file}" target="_blank" class="group flex items-center justify-between w-full border rounded-lg p-2.5 mb-2 transition-all ${link.colorClass}">
-                                    <span class="text-[14px] font-bold flex items-center gap-2">
-                                        ${link.title}
-                                    </span>
-                                    <span class="text-[11px] font-semibold opacity-70 group-hover:opacity-100 transition-opacity">
-                                        열기 ↗
-                                    </span>
-                                </a>
-                            `;
-                        }
-                    });
-
-                    linksHtml = `
-                        <div class="mt-auto pt-4 border-t border-slate-100">
-                            <span class="text-sm text-slate-700 font-bold flex items-center gap-1 mb-3">
-                                🗂️ 관련 자료 모음
-                            </span>
-                            ${buttonsHtml}
-                        </div>
-                    `;
-                }
-
-                // 3. 최종 통합 카드 조립
-                const cardHtml = `
-                    <div class="bg-white border border-slate-200 rounded-xl shadow-sm dashboard-card p-5 flex flex-col h-full">
-                        <div class="mb-4">
-                            <span class="text-xs font-bold px-2.5 py-1 rounded-md ${badgeClass}">
-                                ${item.series}
-                            </span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-800 mb-1 leading-tight break-keep">
-                            ${item.title}
-                        </h3>
-                        <p class="text-slate-500 text-sm font-medium mb-5">
-                            ${item.passage}
-                        </p>
-                        
-                        <div>
-                            ${imagesHtml}
-                        </div>
-                        
-                        ${linksHtml}
-                    </div>
-                `;
-                container.innerHTML += cardHtml;
-            });
-        }
-
-        // ESC 키를 누르면 모든 팝업창이 닫히도록 기능 유지
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Escape") {
-                closeModal();
-                closeHtmlModal();
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', renderDashboard);
-    </script>
-</body>
-</html>
+                    { title: "📖 말씀 문서 보기", file: "John044354.html", colorClass: "text-blue-700 bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-4
