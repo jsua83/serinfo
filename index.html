@@ -44,12 +44,10 @@
 
     <div id="html-modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-70 flex items-center justify-center p-2 sm:p-6 modal-animate" onclick="closeHtmlModal()">
         <div class="relative w-full max-w-4xl h-[90vh] bg-white rounded-xl shadow-2xl flex flex-col overflow-hidden" onclick="event.stopPropagation();">
-            
             <div class="bg-slate-100 border-b border-slate-200 px-4 py-3 flex justify-between items-center">
                 <span class="font-bold text-slate-700 flex items-center gap-2">📖 말씀 문서 읽기</span>
                 <button onclick="closeHtmlModal()" class="text-slate-400 hover:text-red-500 text-3xl font-bold leading-none focus:outline-none">&times;</button>
             </div>
-            
             <div class="flex-grow w-full relative bg-white">
                 <div class="absolute inset-0 flex items-center justify-center text-slate-400 -z-10">로딩 중...</div>
                 <iframe id="modal-iframe" src="" class="w-full h-full border-none"></iframe>
@@ -302,7 +300,7 @@
             document.body.style.overflow = 'auto'; 
         }
 
-        // 🌟 뱃지 색상 지정 함수 (마태복음 전용 초록색 추가!) 🌟
+        // 🌟 뱃지 색상 지정 함수 (마태복음 전용 초록색 추가!)
         function getBadgeClass(seriesName) {
             if (seriesName.includes("누가복음")) return "bg-sky-100 text-sky-700";
             if (seriesName.includes("마태복음") || seriesName.includes("부활주일")) return "bg-pink-100 text-pink-700";
