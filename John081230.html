@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나는 세상의 빛이니 생명의 빛을 얻으리라</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Pretendard -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    
+    <style>
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+            word-break: keep-all; 
+            overflow-wrap: break-word;
+        }
+        
+        /* 형광펜 효과 */
+        .highlight {
+            background: linear-gradient(180deg, rgba(255,255,255,0) 50%, #fef08a 50%);
+            font-weight: 600;
+            color: #1e293b;
+            padding: 0 0.2rem;
+        }
+
+        /* 성경 구절 인용구 스타일 */
+        .verse-quote {
+            position: relative;
+        }
+        .verse-quote::before {
+            content: '"';
+            font-size: 3rem;
+            color: #cbd5e1;
+            position: absolute;
+            top: -10px;
+            left: -15px;
+            font-family: serif;
+        }
+
+        /* 맨 위로 가기 버튼 스타일 */
+        #topBtn {
+            display: none; /* 기본적으로 숨김 */
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #6366f1; /* Indigo-500 */
+            color: white;
+            cursor: pointer;
+            padding: 12px 18px;
+            border-radius: 9999px; 
+            font-weight: 700;
+            font-size: 13px;
+            line-height: 1.2;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        #topBtn:hover {
+            background-color: #4f46e5; /* Indigo-600 */
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-slate-800 antialiased leading-relaxed selection:bg-indigo-200 selection:text-indigo-900">
+
+    <!-- Header Section -->
+    <header class="bg-white border-b border-stone-200 shadow-sm sticky top-0 z-10">
+        <div class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+            <span class="text-sm font-semibold text-indigo-600 tracking-wider">말씀묵상</span>
+            <span class="text-xs text-slate-500">요한복음 8:12~30</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto px-6 py-12 md:py-16">
+        
+        <!-- Title Area -->
+        <div class="text-center mb-16">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-4 tracking-tight">
+                나는 세상의 빛이니 생명의 빛을 얻으리라
+            </h1>
+            <p class="text-indigo-600 font-medium mb-6 text-lg">요한복음 8:12~30</p>
+            <div class="w-16 h-1 bg-indigo-500 mx-auto rounded-full"></div>
+        </div>
+
+        <article class="space-y-12 text-lg text-slate-700">
+            
+            <!-- Intro Section -->
+            <section>
+                <blockquote class="bg-stone-100 border-l-4 border-indigo-400 p-4 mb-5 rounded-r-lg">
+                    <p class="font-medium text-slate-800">"이 말씀을 하시매 많은 사람이 믿더라." <span class="text-sm text-slate-500">(요 8:30)</span></p>
+                </blockquote>
+                <p class="mb-4">예수님의 말씀을 듣고 모두가 믿은 것은 아니었습니다. 끝까지 거부한 사람도 있었습니다. 그러나 많은 사람이 믿었습니다. 오늘 본문에는 어떠한 기적도 없습니다. 오직 말씀만 있습니다. 그런데 많은 사람이 믿었습니다.</p>
+                <p class="mb-4">"믿음은 들음에서 난다." (롬 10:17) 기적을 보면 믿을 것 같지만, 성경은 <span class="highlight">말씀을 들을 때 믿음이 생긴다</span>고 합니다. 이 시간도 하나님의 말씀을 들을 때, 하나님이 역사하시어 믿어지는 은혜가 있기를 바랍니다.</p>
+            </section>
+
+            <!-- Section 1 -->
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-2">
+                    <span class="text-indigo-500">1.</span> 예수님의 일곱 가지 자기선언 — "나는 ~이다"
+                </h2>
+                <p class="mb-4">요한복음에는 예수님의 자기선언이 일곱 차례 등장합니다.</p>
+                <p class="mb-4">하나님은 구약에서 당신의 이름을 "I AM WHO I AM(나는 스스로 있는 자)"이라 말씀하셨습니다. (출 3:14) 마찬가지로 하나님의 아들 예수님도 당신이 어떤 존재인지 일곱 차례에 걸쳐 직접 선언하셨습니다.</p>
+                
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-stone-200 mb-5">
+                    <ul class="space-y-2 text-slate-800 font-medium">
+                        <li><span class="text-indigo-500 mr-2">▪</span> 요 6장 — 나는 생명의 떡이다</li>
+                        <li><span class="text-indigo-500 mr-2">▪</span> <span class="highlight text-indigo-700">요 8장 — 나는 세상의 빛이다</span></li>
+                        <li><span class="text-indigo-500 mr-2">▪</span> 요 10장 — 나는 양의 문이다 / 나는 선한 목자다</li>
+                        <li><span class="text-indigo-500 mr-2">▪</span> 요 11장 — 나는 부활이요 생명이다</li>
+                        <li><span class="text-indigo-500 mr-2">▪</span> 요 14장 — 나는 길이요 진리요 생명이다</li>
+                        <li><span class="text-indigo-500 mr-2">▪</span> 요 15장 — 나는 포도나무다</li>
+                    </ul>
+                </div>
+                <p>오늘은 그중 <strong class="text-slate-900">"나는 세상의 빛이니"</strong>라는 선언에 집중합니다.</p>
+            </section>
+
+            <!-- Section 2 -->
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-2">
+                    <span class="text-indigo-500">2.</span> 세상의 빛 — 교회의 빛이 아니라 세상의 빛
+                </h2>
+                <blockquote class="bg-indigo-50 border-l-4 border-indigo-500 p-5 rounded-r-lg text-center my-6">
+                    <p class="text-xl font-bold text-indigo-900 verse-quote">"나는 세상의 빛이니." <span class="text-sm font-normal text-indigo-700">(요 8:12)</span></p>
+                </blockquote>
+                <p class="mb-4">예수님은 교회의 빛이 아닙니다. <span class="highlight">세상의 빛이십니다.</span></p>
+                <p class="mb-4 text-slate-600 italic">"하나님이 세상을 이처럼 사랑하사 독생자를 주셨으니." (요 3:16)</p>
+                <p>하나님이 교회를 사랑하사 독생자를 주신 것이 아니라, 세상을 사랑하사 주셨습니다. 우리가 세상을 바라볼 때 "이 악하고 타락한 세상"이라 말하고 끝내는 것이 아니라, 하나님이 사랑하시는 세상, 독생자를 아끼지 않고 내어주신 세상임을 기억해야 합니다.</p>
+            </section>
+
+            <!-- Section 3 -->
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-2">
+                    <span class="text-indigo-500">3.</span> 빛의 네 가지 역할
+                </h2>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">첫째, 빛은 보게 합니다</h3>
+                        <p class="mb-3">아무리 눈을 뜨고 있어도 빛이 없으면 볼 수 없습니다. 빛이 있어야 볼 수 있습니다. 영적 세계도 같은 원리입니다. 눈에 보이지 않는 하나님을 어떻게 알고 믿게 됩니까? 빛 되신 예수님이 우리 안에 오실 때, 그 빛으로 우리가 영적 실체를 보게 됩니다.</p>
+                        <p class="mb-3 text-slate-600 italic">"지혜와 계시의 영을 너희에게 주사 하나님을 알게 하시고 너희 마음의 눈을 밝히사." (엡 1:17~18)</p>
+                        <p>세상 사람들은 말합니다. "예수 믿는 사람들이 특별하다는 것을 좀 보여달라. 그러면 믿겠다." 그들이 우리를 통해 빛 되신 예수님을 보고 하나님께로 돌아오게 됩니다.</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-stone-200">
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">둘째, 빛은 어둠을 드러냅니다</h3>
+                        <p class="mb-3">빛이 오기 전에는 어둠이 어둠인 줄도 몰랐습니다. 그러나 빛이 비추이는 순간 빛과 어둠이 극명하게 대조됩니다.</p>
+                        <p class="mb-3">구약성경에는 사탄에 대한 언급이 세 곳, 사탄 진술이 15회에 불과합니다. 그런데 신약 사복음서에만 61회에 걸쳐 사탄 마귀가 등장합니다. 세상의 빛이신 예수님이 오시자, 그 빛이 어둠을 비추어 사탄의 모습이 적나라하게 드러난 것입니다.</p>
+                        <p class="mb-3">개인도 마찬가지입니다. 빛 되신 예수님이 내 안에 들어오실 때, 이전에는 몰랐던 어둠의 일이 어둠이었음을 깨닫게 됩니다.</p>
+                        <p class="mb-3 text-slate-600 italic">"악을 행하는 자마다 빛을 미워하여 빛으로 오지 아니하나니 이는 그 행위가 드러날까 함이라." (요 3:20)</p>
+                        <p>예수님을 진짜 만난 사람들의 공통된 고백은 이것입니다. <span class="font-medium text-slate-900">"예전에는 이렇게 사는 것이 어둠인 줄 몰랐는데, 빛 되신 예수님이 들어오시고 보니 그것이 어둠이었습니다."</span></p>
+                    </div>
+
+                    <div class="pt-4 border-t border-stone-200">
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">셋째, 빛은 어둠을 몰아냅니다</h3>
+                        <p class="mb-3">이 세상 그 어떤 것도 어둠을 몰아낼 수 없습니다. 권력으로도, 압력으로도 어둠은 물러가지 않습니다. <span class="highlight">오직 빛으로만 어둠이 물러갑니다.</span></p>
+                        <p class="mb-3">우리는 어둠의 문화 가운데 영향을 받으며 살아갑니다. 깨어 기도해야 합니다. 빛이 찾아오면 어둠도 빛의 속도로 물러가게 됩니다.</p>
+                        <p class="text-slate-600 italic">"나는 빛으로 세상에 왔나니 무릇 나를 믿는 자로 어둠에 거하지 않게 하려 함이라." (요 12:46)</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-stone-200">
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">넷째, 빛은 무질서를 질서로, 공허함을 채웁니다</h3>
+                        <p class="mb-3">창세기 1장에서 온 세상이 창조되기 전, 땅은 혼돈하고 공허하며 흑암이 깊음 위에 있었습니다. 그런데 빛이 임하자 무질서에 질서가 부여되고 공허함이 채워졌습니다.</p>
+                        <p class="mb-3">마음에 예수님이 없는 사람의 특징은 두 가지입니다. 삶이 무질서하고, 마음이 공허합니다. <span class="font-medium text-slate-900">빛 되신 예수님이 우리 마음에 들어오실 때, 삶에 질서가 잡히고 마음이 채워집니다.</span></p>
+                        <p>예수님을 믿으시기 바랍니다. 믿는 것이 복입니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4 -->
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-2">
+                    <span class="text-indigo-500">4.</span> 우리도 세상의 빛이다 — 발광체와 반사체
+                </h2>
+                <blockquote class="bg-stone-100 border-l-4 border-indigo-400 p-4 mb-5 rounded-r-lg">
+                    <p class="font-medium text-slate-800">"너희는 세상의 빛이라." <span class="text-sm text-slate-500">(마 5:14)</span></p>
+                </blockquote>
+                <p class="mb-4">놀랍지 않습니까? 빛이신 예수님이 우리를 향해서도 "너희도 세상의 빛이라"고 말씀하십니다. 그러나 예수님과 우리 사이에는 근본적인 차이가 있습니다.</p>
+                <p class="mb-4">예수님은 스스로 빛을 내시는 태양과 같은 <strong class="text-indigo-600">발광체(發光體)</strong>이십니다. 그러나 우리는 스스로 빛을 낼 수 없습니다. 달이 태양의 빛을 반사하듯, 우리는 <strong class="text-indigo-600">반사체(反射體)</strong>입니다.</p>
+                <p class="mb-4 text-slate-600 italic">"나를 따르는 자는 어둠에 다니지 아니하고 생명의 빛을 얻으리라." (요 8:12)</p>
+                <p><span class="highlight">우리는 예수님을 따를 때에만, 예수님 안에 거할 때에만 그 빛을 받아 세상에 전해줄 수 있습니다.</span></p>
+            </section>
+
+            <!-- Section 5 -->
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-2">
+                    <span class="text-indigo-500">5.</span> 예배 — 빛 앞에 서는 시간
+                </h2>
+                <p class="mb-4">왜 예배가 중요합니까? 예배는 하나님 앞에 나아가 그 빛을 받는 시간이기 때문입니다.</p>
+                <p class="mb-4">모세가 40일간 시내산에서 하나님 앞에 서고 나서 그 얼굴에 광채가 났습니다. 이것은 그냥 넘길 수 없는 본문입니다. 빛 앞에 40일 서 있었을 때, 그 빛이 얼굴에 반사된 것입니다. 하나님 앞에 머무를 때 빛이 있습니다.</p>
+                <p class="mb-4">왜 죄가 무섭습니까? <span class="font-medium text-slate-900">사람은 죄를 지으면 가장 먼저 하나님의 얼굴을 피하게 됩니다.</span> 창세기 3장, 인류 최초의 범죄 후 아담이 제일 먼저 한 것은 숨은 것이었습니다.</p>
+                <p>죄를 지으면 빛 되신 주님의 얼굴을 피하게 됩니다. 그래서 죄를 짓지 말아야 합니다. 빛으로 부름받은 우리는 하나님 앞에 거하며 그 얼굴빛을 받아야 합니다.</p>
+            </section>
+
+            <!-- Section 6 -->
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-2">
+                    <span class="text-indigo-500">6.</span> 빛으로 사는 두 가지 원칙
+                </h2>
+                
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">1) 빛은 소리가 없다 — 말을 조심하라</h3>
+                    <p class="mb-3">빛은 전자기파이자 에너지의 흐름입니다. 입자의 성질과 파동의 성질을 모두 가지고 있습니다. 그러나 빛은 소리가 없습니다. 우리는 빛입니다. 하나님의 일을 하는데 말을 너무 많이 하지 마십시오. 진짜 빛의 자녀들은 말이 많지 않습니다. 시끄럽게 하지 않습니다. 빛답게 말을 조심하는 은혜가 있기를 바랍니다.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">2) 빛은 모일 때 더 큰 힘을 발휘한다 — 하나가 되라</h3>
+                    <p class="mb-3">빛은 흩어졌을 때보다 한곳에 모일 때 더 큰 힘을 발휘합니다. 교회가 하나 될 때 하나님의 일을 크고 힘있게 감당하게 됩니다. 사탄이 가장 두려워하는 것은 교회가 하나 되는 것입니다.</p>
+                    <p class="mb-3 text-slate-600 italic">"거룩하신 아버지여 우리와 같이 그들도 하나가 되게 하옵소서." (요 17:11 참조)</p>
+                    <p>예수님이 그토록 기도하신 제목이 하나됨입니다. 내 생각과 판단이 옳을 수도 있지만, 하나 되는 은혜를 위해 우리가 함께 기도할 때 성령께서 같은 마음을 부어 주십니다.</p>
+                </div>
+            </section>
+
+            <!-- Section 7 -->
+            <section class="bg-stone-100 p-6 rounded-xl border border-stone-200">
+                <h2 class="text-xl font-bold text-slate-900 mb-4">"불신지옥"에 대한 바른 이해</h2>
+                <p class="mb-3">예수천당 불신지옥이라는 말에 사람들은 "왜 이렇게 배타적이냐"며 거부 반응을 보입니다. 예수 믿으면 천국 갑니까? 그렇습니다. 주님이 말씀하셨습니다.</p>
+                <p class="mb-4 italic text-slate-600">"나는 길이요 진리요 생명이니 나로 말미암지 않고는 아버지께로 올 자가 없느니라." (요 14:6)</p>
+                <p class="mb-4">그렇다면 불신지옥? 절반만 맞습니다. 이렇게 설명할 수 있습니다.</p>
+                <p class="mb-4 bg-white p-4 rounded text-slate-700 shadow-sm border border-stone-200">
+                    불치병에 걸린 사람이 있습니다. 그 병을 고칠 수 있는 약이 하나 있습니다. 약을 먹으면 살고, 안 먹으면 죽습니다. 이 사람이 "말도 안 된다"며 약을 끝까지 거부하다 죽었습니다. <strong>이 사람이 왜 죽었습니까? 약을 안 먹어서가 아니라, 일차적으로는 병 때문에 죽은 것입니다.</strong>
+                </p>
+                <p class="mb-3">온 인류는 죽음에 이르는 병인 죄에 걸려 있습니다. 하나님의 해결책은 예수 그리스도의 십자가입니다. 예수를 믿으면 구원받습니다. <span class="highlight">예수를 믿지 않으면 안 믿어서 죽는 것이 아니라, 죄 가운데서 죽는 것입니다.</span></p>
+                <p>하나님은 배타적으로 믿으면 살리고 안 믿으면 버리시는 분이 아닙니다. 다 죽을 수밖에 없는 자들을 예수 그리스도를 통해 살리시는 것입니다.</p>
+            </section>
+
+            <hr class="border-stone-200 my-10">
+
+            <!-- Conclusion -->
+            <section class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-stone-200">
+                <h3 class="text-xl font-bold text-slate-900 mb-4 text-center">결론</h3>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start gap-2">
+                        <svg class="w-6 h-6 text-indigo-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span><strong class="text-slate-900">"이 말씀을 하시매 많은 사람이 믿더라."</strong> 말씀을 들을 때 예수님을 믿는 은혜가 있기를 바랍니다.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-6 h-6 text-indigo-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span>빛 되신 주님이 우리 눈을 밝혀 보게 하시고, 어둠을 드러내고 몰아내시며, 우리 삶에 질서를 주시고 공허함을 채워 주시기를 바랍니다.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-6 h-6 text-indigo-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span><strong class="text-slate-900">저와 여러분도 빛입니다.</strong> 이 놀라운 사실에 감격하십시오.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-6 h-6 text-indigo-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span>우리는 주님을 따를 때만, 주님 안에 거할 때만 빛(반사체)입니다. 주님 안에 거하십시오. <strong>말을 조심하십시오. 하나 되십시오.</strong></span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Prayer -->
+            <section class="bg-indigo-50 text-slate-800 p-6 md:p-8 rounded-xl shadow-sm border border-indigo-100 mt-10">
+                <h3 class="text-xl font-bold mb-4 text-center text-indigo-900">기도</h3>
+                <p class="text-center italic leading-relaxed text-slate-700">
+                    어두움의 길을 벗어나 빛으로 나오는 믿음의 사람이 되게 하옵소서. <br><br>
+                    빛 되신 예수님을 따르는 제자가 되게 하옵소서. <br><br>
+                    예수님의 이름으로 기도합니다. 아멘.
+                </p>
+            </section>
+
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-10 text-center mt-12">
+        <div class="max-w-3xl mx-auto px-6">
+            <p class="text-sm">
+                &copy; 2026 말씀묵상. 푸른동산 지산교회 정재학 목사
+            </p>
+        </div>
+    </footer>
+
+    <!-- 맨 위로 가기 버튼 -->
+    <button id="topBtn" onclick="scrollToTop()">↑<br>TOP</button>
+
+    <!-- 스크립트 -->
+    <script>
+        // 스크롤 감지하여 맨 위로 가기 버튼 표시/숨김
+        window.onscroll = function() {
+            const topBtn = document.getElementById("topBtn");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                topBtn.style.display = "block";
+            } else {
+                topBtn.style.display = "none";
+            }
+        };
+
+        // 부드럽게 맨 위로 스크롤
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
