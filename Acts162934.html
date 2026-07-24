@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주 예수를 믿으라 | 말씀묵상</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#1d4ed8',
+                            600: '#1e40af',
+                            700: '#1d3557',
+                            800: '#0f172a',
+                        },
+                        accent: {
+                            50: '#fdf8f6',
+                            100: '#f2e8e5',
+                            500: '#c59b27',
+                            600: '#a37d1d',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
+                        serif: ['Noto Serif KR', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Noto Serif KR & Pretendard -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .serif-text {
+            font-family: 'Noto Serif KR', serif;
+        }
+        /* 스크롤바 디테일 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 4px;
+        }
+        
+        /* 텍스트 하이라이트 스타일 */
+        .hl {
+            background: linear-gradient(120deg, rgba(254, 240, 138, 0.6) 0%, rgba(254, 240, 138, 0.6) 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 88%;
+            padding: 0 2px;
+        }
+        .dark .hl {
+            background: linear-gradient(120deg, rgba(161, 98, 7, 0.4) 0%, rgba(161, 98, 7, 0.4) 100%);
+            background-size: 100% 40%;
+            background-position: 0 88%;
+        }
+
+        /* TOP 버튼 스타일 */
+        #topBtn {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 25px;
+            z-index: 99;
+            font-size: 13px;
+            font-weight: 700;
+            border: none;
+            outline: none;
+            background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+            color: white;
+            cursor: pointer;
+            padding: 12px 14px;
+            border-radius: 50%;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+            transition: all 0.3s ease;
+            text-align: center;
+            line-height: 1.2;
+        }
+        #topBtn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 min-h-screen flex flex-col selection:bg-blue-200 dark:selection:bg-blue-900">
+
+    <!-- 상단 스크롤 진행 바 -->
+    <div id="scrollProgress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-amber-500 z-50 transition-all duration-75" style="width: 0%;"></div>
+
+    <!-- 플로팅 컨트롤 바 (폰트 크기, 다크모드, 공유) -->
+    <div class="sticky top-0 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-200">
+                    <i class="fa-solid fa-book-bible mr-1"></i> 말씀묵상
+                </span>
+                <span class="text-xs text-slate-500 dark:text-slate-400 hidden sm:inline">사도행전 16:29~34</span>
+            </div>
+            
+            <div class="flex items-center space-x-2">
+                <!-- 폰트 축소 -->
+                <button onclick="changeFontSize(-1)" title="글자 축소" class="p-2 w-9 h-9 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition">
+                    <span class="text-xs font-bold">가-</span>
+                </button>
+                <!-- 폰트 확대 -->
+                <button onclick="changeFontSize(1)" title="글자 확대" class="p-2 w-9 h-9 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition">
+                    <span class="text-base font-bold">가+</span>
+                </button>
+                <div class="h-4 w-px bg-slate-300 dark:bg-slate-700 mx-1"></div>
+                <!-- 다크모드 토글 -->
+                <button id="themeToggle" onclick="toggleDarkMode()" title="테마 변경" class="p-2 w-9 h-9 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition">
+                    <i id="themeIcon" class="fa-solid fa-moon"></i>
+                </button>
+                <!-- 공유 버튼 -->
+                <button onclick="copyURL()" title="링크 복사" class="p-2 w-9 h-9 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition">
+                    <i class="fa-solid fa-share-nodes"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 메인 컨테이너 -->
+    <main class="flex-grow max-w-4xl w-full mx-auto px-4 py-8 sm:py-12">
+        
+        <!-- 타이틀 헤더 카드 -->
+        <header class="mb-10 text-center bg-white dark:bg-slate-800 p-6 sm:p-10 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-700/80 relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 opacity-5 dark:opacity-10 pointer-events-none">
+                <i class="fa-solid fa-cross text-9xl text-slate-900 dark:text-white"></i>
+            </div>
+            
+            <span class="inline-block px-3 py-1 text-xs font-bold tracking-wider text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded-full border border-amber-200 dark:border-amber-800 mb-4">
+                복음 설교
+            </span>
+            
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-black serif-text text-slate-900 dark:text-white leading-tight mb-4 tracking-tight">
+                주 예수를 믿으라
+            </h1>
+            
+            <p class="text-base sm:text-lg font-medium text-slate-600 dark:text-slate-300 mb-6">
+                <i class="fa-regular fa-bookmark text-amber-500 mr-1.5"></i> 사도행전 16장 29절 ~ 34절
+            </p>
+
+            <!-- 요절 박스 -->
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-900 dark:to-slate-900/80 p-5 sm:p-6 rounded-xl border-l-4 border-blue-600 text-left shadow-inner my-4">
+                <p class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-1">KEY VERSE</p>
+                <blockquote class="text-lg sm:text-xl font-bold serif-text text-slate-800 dark:text-slate-100 leading-relaxed">
+                    "주 예수를 믿으라 그리하면 너와 네 집이 구원을 얻으리라."
+                </blockquote>
+                <p class="text-right text-xs sm:text-sm font-semibold text-slate-500 dark:text-slate-400 mt-2">
+                    — 사도행전 16:31
+                </p>
+            </div>
+        </header>
+
+        <!-- 빠른 목차 네비게이션 -->
+        <nav class="mb-10 bg-slate-100 dark:bg-slate-800/60 p-4 sm:p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+            <h2 class="text-sm font-bold text-slate-700 dark:text-slate-300 mb-3 flex items-center">
+                <i class="fa-solid fa-list-ol mr-2 text-blue-600 dark:text-blue-400"></i> 설교 요약 목차
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm">
+                <a href="#sec1" class="p-2 rounded bg-white dark:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/60 dark:border-slate-700 flex items-center transition">
+                    <span class="w-5 h-5 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 text-xs font-bold flex items-center justify-center mr-2">1</span>
+                    믿어야 구원받는다
+                </a>
+                <a href="#sec2" class="p-2 rounded bg-white dark:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/60 dark:border-slate-700 flex items-center transition">
+                    <span class="w-5 h-5 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 text-xs font-bold flex items-center justify-center mr-2">2</span>
+                    믿음은 회개를 동반한 사건이다
+                </a>
+                <a href="#sec3" class="p-2 rounded bg-white dark:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/60 dark:border-slate-700 flex items-center transition">
+                    <span class="w-5 h-5 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 text-xs font-bold flex items-center justify-center mr-2">3</span>
+                    예수를 믿어야 한다
+                </a>
+                <a href="#sec4" class="p-2 rounded bg-white dark:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/60 dark:border-slate-700 flex items-center transition">
+                    <span class="w-5 h-5 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 text-xs font-bold flex items-center justify-center mr-2">4</span>
+                    주 예수를 믿어야 한다
+                </a>
+                <a href="#sec5" class="p-2 rounded bg-white dark:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/60 dark:border-slate-700 flex items-center transition">
+                    <span class="w-5 h-5 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 text-xs font-bold flex items-center justify-center mr-2">5</span>
+                    믿음의 다른 이름은 충성이다
+                </a>
+                <a href="#sec6" class="p-2 rounded bg-white dark:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/60 dark:border-slate-700 flex items-center transition">
+                    <span class="w-5 h-5 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 text-xs font-bold flex items-center justify-center mr-2">6</span>
+                    가정이 구원의 기본 단위
+                </a>
+                <a href="#sec7" class="p-2 rounded bg-white dark:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/60 dark:border-slate-700 flex items-center transition">
+                    <span class="w-5 h-5 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 text-xs font-bold flex items-center justify-center mr-2">7</span>
+                    작은 교회 가정, 큰 가정 교회
+                </a>
+                <a href="#conclusion" class="p-2 rounded bg-white dark:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/60 dark:border-slate-700 flex items-center transition col-span-1 sm:col-span-2 font-semibold">
+                    <span class="w-5 h-5 rounded-full bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-300 text-xs font-bold flex items-center justify-center mr-2">★</span>
+                    결론 및 기도
+                </a>
+            </div>
+        </nav>
+
+        <!-- 설교 본문 영역 -->
+        <article id="contentArea" class="space-y-8 text-base sm:text-lg leading-relaxed text-slate-700 dark:text-slate-200">
+            
+            <!-- 서론 -->
+            <div class="bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-700/80">
+                <p class="mb-4">
+                    오늘은 복음 설교를 하려고 합니다. 누군가는 이렇게 말할 수 있습니다. <span class="italic text-slate-500 dark:text-slate-400">"나는 이미 복음을 믿는데 왜 또 복음을 설교하느냐?"</span> 그러나 <strong class="hl font-semibold text-slate-900 dark:text-white">믿는 자에게도 복음은 다시 선포되어야 합니다.</strong>
+                </p>
+                <p class="mb-4">
+                    로마서는 바울이 로마에 있는 성도들에게 보낸 편지입니다. 수신자는 이미 복음을 알고 복음을 믿는 성도들이었습니다. 그런데도 바울은 이렇게 말합니다.
+                </p>
+                
+                <div class="my-4 p-4 bg-slate-50 dark:bg-slate-900/60 rounded-lg border-l-4 border-slate-400 dark:border-slate-600 serif-text font-medium">
+                    "나는 할 수 있는 대로 로마에 있는 너희에게도 복음 전하기를 원한다." (롬 1:15)
+                </div>
+
+                <p>
+                    우리 중에 모태 신앙인이 있고, 예수님을 수십 년간 믿어 오신 분이 있습니다. 그 모든 분들에게 모든 믿는 자에게 구원을 주시는 <strong class="text-blue-600 dark:text-blue-400 font-bold">하나님의 능력인 예수 그리스도에 대한 복음</strong>을 다시 전합니다.
+                </p>
+            </div>
+
+            <!-- 대지 1 -->
+            <section id="sec1" class="bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-700/80 scroll-mt-20">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span class="px-3 py-1 bg-blue-600 text-white font-black text-sm rounded-lg">1</span>
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white serif-text">믿어야 구원받는다</h3>
+                </div>
+                
+                <p class="mb-4">
+                    감옥의 간수가 바울에게 묻습니다. <span class="font-semibold text-slate-800 dark:text-slate-200">"내가 어떻게 해야 구원을 받겠습니까?"</span> 바울이 답합니다.
+                </p>
+
+                <div class="my-4 p-4 bg-blue-50/70 dark:bg-slate-900/80 rounded-lg border-l-4 border-blue-500 serif-text font-semibold text-blue-900 dark:text-blue-200">
+                    "주 예수를 믿으라 그리하면 너와 네 집이 구원을 얻으리라."
+                </div>
+
+                <p class="mb-4">
+                    어떻게 구원을 얻습니까? <strong class="hl font-bold text-slate-900 dark:text-white">믿어야 합니다.</strong> 이것이 기독교 신앙의 핵심입니다.
+                </p>
+                <p class="mb-4">
+                    구원은 인간의 공로로, 선행으로, 어떤 고행을 통해서 얻어지는 것이 아닙니다. 인간이 아무리 착한 일을 하고 잘 살아도 그것이 구원과 관계가 있는 것이 아닙니다. 하나님이 주신 구원의 길을 믿음으로 받는 것입니다.
+                </p>
+                <p class="p-4 bg-amber-50/80 dark:bg-amber-950/30 rounded-xl border border-amber-200 dark:border-amber-900 text-amber-900 dark:text-amber-200">
+                    <i class="fa-solid fa-gift mr-2 text-amber-600"></i>
+                    구원의 시작은 하나님이십니다. 인간이 무엇을 하는 것이 아니라, <strong class="font-bold underline decoration-amber-500 underline-offset-4">하나님이 인간을 위하여 하신 일을 믿고 받아들이고 인정하는 것</strong>입니다. 구원은 선물입니다. 구원의 선물을 받아들일 때, 곧 믿을 때 구원의 효과가 나타납니다.
+                </p>
+            </section>
+
+            <!-- 대지 2 -->
+            <section id="sec2" class="bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-700/80 scroll-mt-20">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span class="px-3 py-1 bg-blue-600 text-white font-black text-sm rounded-lg">2</span>
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white serif-text">믿음은 회개를 동반한 사건이다</h3>
+                </div>
+
+                <p class="mb-4">
+                    믿음은 단순한 지적 동의가 아닙니다. <strong class="hl font-bold text-slate-900 dark:text-white">믿음은 회개를 동반한 사건이어야만 합니다.</strong> 회개와 믿음은 함께 갑니다.
+                </p>
+
+                <div class="space-y-2 my-4">
+                    <div class="p-3 bg-slate-50 dark:bg-slate-900/60 rounded-lg border-l-4 border-indigo-400 text-sm sm:text-base serif-text">
+                        "때가 찼고 하나님의 나라가 가까이 왔으니 <strong class="text-indigo-600 dark:text-indigo-400">회개하고 복음을 믿으라.</strong>" (막 1:15)
+                    </div>
+                    <div class="p-3 bg-slate-50 dark:bg-slate-900/60 rounded-lg border-l-4 border-indigo-400 text-sm sm:text-base serif-text">
+                        "하나님께 대한 <strong class="text-indigo-600 dark:text-indigo-400">회개와</strong> 우리 주 예수 그리스도에 대한 <strong class="text-indigo-600 dark:text-indigo-400">믿음.</strong>" (행 20:21)
+                    </div>
+                    <div class="p-3 bg-slate-50 dark:bg-slate-900/60 rounded-lg border-l-4 border-indigo-400 text-sm sm:text-base serif-text">
+                        "죽은 행실을 <strong class="text-indigo-600 dark:text-indigo-400">회개함과</strong> 하나님께 대한 <strong class="text-indigo-600 dark:text-indigo-400">신앙.</strong>" (히 6:1)
+                    </div>
+                </div>
+
+                <p class="mb-4">
+                    믿음이란 이제 내 삶을 다른 방향으로 바꾸겠다는 회개의 결단과 함께 시작되는 것입니다. 믿음은 내 생각과 내 가치관을 바꾸겠다는 것이며, 반드시 행위를 동반합니다. <strong class="text-red-600 dark:text-red-400 font-semibold">행함이 없는 믿음은 죽은 믿음입니다.</strong>
+                </p>
+                <p>
+                    믿음이 있으십니까? 그렇다면 그 믿음을 보여주셔야 합니다. 예수 믿기 전의 삶과 믿은 후의 삶이 같을 수 없습니다. <strong class="hl font-bold">행함이 믿음의 증거입니다.</strong>
+                </p>
+            </section>
+
+            <!-- 대지 3 -->
+            <section id="sec3" class="bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-700/80 scroll-mt-20">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span class="px-3 py-1 bg-blue-600 text-white font-black text-sm rounded-lg">3</span>
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white serif-text">예수를 믿어야 한다</h3>
+                </div>
+
+                <p class="mb-4">
+                    무엇을 믿어야 합니까? 기독교의 핵심은 <strong class="text-blue-600 dark:text-blue-400 font-bold">예수를 믿는 것</strong>입니다.
+                </p>
+
+                <div class="my-3 p-4 bg-slate-50 dark:bg-slate-900/60 rounded-lg border-l-4 border-slate-400 serif-text">
+                    "성경은 내게 대하여 예수를 증언하는 것이다." (요 5:39 참조)
+                </div>
+
+                <p class="mb-4">
+                    성경의 모든 족보는 여인의 후손으로 오시는 한 인물, 즉 예수님을 향하고 있습니다. 성경의 주인공은 예수님입니다.
+                </p>
+                <p class="mb-4">
+                    예수님 이름의 뜻은 <strong class="hl font-semibold">"자기 백성을 그들의 죄에서 구원할 자"</strong>입니다. 예수는 구약에 나오는 '여호와'와 같은 뜻이기에, 신약 성경을 펴면 '여호와'라는 단어가 한 번도 나오지 않습니다. 예수님이 곧 여호와이시기 때문입니다.
+                </p>
+
+                <!-- 요한복음 7가지 '나는 ~이다' 카드 -->
+                <div class="my-6 bg-slate-50 dark:bg-slate-900/90 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-3 flex items-center">
+                        <i class="fa-solid fa-sun text-amber-500 mr-2"></i> 구약의 "나는 나다(I AM WHO I AM)" & 요한복음의 7가지 선언
+                    </h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm font-medium">
+                        <div class="p-2 bg-white dark:bg-slate-800 rounded border border-slate-200/70 dark:border-slate-700">1. 나는 생명의 떡이다</div>
+                        <div class="p-2 bg-white dark:bg-slate-800 rounded border border-slate-200/70 dark:border-slate-700">2. 나는 세상의 빛이다</div>
+                        <div class="p-2 bg-white dark:bg-slate-800 rounded border border-slate-200/70 dark:border-slate-700">3. 나는 양의 문이다</div>
+                        <div class="p-2 bg-white dark:bg-slate-800 rounded border border-slate-200/70 dark:border-slate-700">4. 나는 선한 목자다</div>
+                        <div class="p-2 bg-white dark:bg-slate-800 rounded border border-slate-200/70 dark:border-slate-700">5. 나는 부활이요 생명이다</div>
+                        <div class="p-2 bg-white dark:bg-slate-800 rounded border border-slate-200/70 dark:border-slate-700">6. 나는 길이요 진리요 생명이다</div>
+                        <div class="p-2 bg-white dark:bg-slate-800 rounded border border-slate-200/70 dark:border-slate-700 sm:col-span-2">7. 나는 참 포도나무다</div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <p class="p-3 bg-blue-50/50 dark:bg-slate-900/60 rounded-lg border-l-4 border-blue-600 serif-text">
+                        "다른 이로서는 구원을 받을 수 없나니 천하 사람 중에 구원을 받을 만한 다른 이름을 우리에게 주신 일이 없느니라." (행 4:12)
+                    </p>
+                    <p class="p-3 bg-blue-50/50 dark:bg-slate-900/60 rounded-lg border-l-4 border-blue-600 serif-text">
+                        "사람이 마음으로 믿어 의에 이르고 입으로 시인하여 구원에 이르느니라." (롬 10:10)
+                    </p>
+                </div>
+                <p class="mt-4">
+                    예수님이 하나님의 아들이심과 나를 위해 죽으신 것을 마음으로 믿고, 입으로 "예수님이 나의 구주이십니다"라고 고백할 때 약속하신 대로 구원이 임합니다.
+                </p>
+            </section>
+
+            <!-- 대지 4 -->
+            <section id="sec4" class="bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-700/80 scroll-mt-20">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span class="px-3 py-1 bg-blue-600 text-white font-black text-sm rounded-lg">4</span>
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white serif-text">주 예수를 믿어야 한다</h3>
+                </div>
+
+                <p class="mb-4">
+                    성경은 그냥 "예수를 믿으라"가 아니라 <strong class="hl text-blue-700 dark:text-blue-300 font-bold">"주 예수를 믿으라"</strong>고 말씀합니다.
+                </p>
+                <p class="mb-4">
+                    당시는 로마 황제를 '주인(主人)'으로 섬기던 시대였습니다. 그 시대에 "예수님이 나의 주님이시다"라고 고백하는 것은 <strong class="text-red-600 dark:text-red-400 font-bold">목숨을 건 선언</strong>이었습니다. 예수 믿는다는 것은 예수님을 내 삶의 주인으로 믿는다는 것입니다. 내 생각과 내 계획이 아니라, 그분의 생각과 그분의 계획을 따르겠다는 것입니다.
+                </p>
+                
+                <div class="p-4 bg-amber-50 dark:bg-amber-950/20 rounded-xl border-l-4 border-amber-500 text-slate-800 dark:text-slate-200 my-4">
+                    <p class="font-semibold mb-2">💡 램프의 요정 지니가 아닌 주님(Lord)</p>
+                    <p class="text-sm sm:text-base">
+                        많은 사람들이 예수님을 주인이 아니라, 자신의 꿈과 계획을 이루어 줄 '램프의 요정 지니' 정도로 생각합니다. 내 문제를 해결해 주실 분, 내 병을 고쳐주실 분으로만 믿는 것은 예수를 주로 믿는 것이 아닙니다. 오늘부터 예수님을 주님으로 믿으시기 바랍니다.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 대지 5 -->
+            <section id="sec5" class="bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-700/80 scroll-mt-20">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span class="px-3 py-1 bg-blue-600 text-white font-black text-sm rounded-lg">5</span>
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white serif-text">믿음의 다른 이름은 충성이다</h3>
+                </div>
+
+                <p class="mb-4">
+                    믿음의 헬라어는 <strong class="text-indigo-600 dark:text-indigo-400 font-bold">'피스티스(πίσ티ς)'</strong>입니다. 하나님을 향한 전적인 신뢰, 신실함, 충성을 의미합니다. 헬라어 피스티스가 성경에서 '믿음'으로도, '충성'으로도 번역되어 있습니다.
+                </p>
+                
+                <div class="bg-slate-50 dark:bg-slate-900/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700 mb-4 space-y-2 text-sm sm:text-base">
+                    <p>• Gal 5:22 — 성령의 아홉 가지 열매 중 하나인 <strong class="text-amber-600 dark:text-amber-400 font-bold">'충성'</strong>이 바로 이 피스티스입니다.</p>
+                    <p>• Rev 2장 — 버가모 교회 편지: <span class="serif-text italic">"내 충성된 증인 안디바가 죽임을 당할 때도 나를 믿는 믿음을 지켰다"</span> (충성과 믿음 = 동의어)</p>
+                </div>
+
+                <div class="p-4 bg-blue-50 dark:bg-blue-950/40 rounded-xl text-center my-4 font-bold text-lg text-blue-900 dark:text-blue-200 border border-blue-200 dark:border-blue-800">
+                    "예수님을 믿어야 구원받는다" = "예수님께 충성해야 구원받는다"
+                </div>
+
+                <p class="mb-3">
+                    예수님이 처음 제자들을 부르실 때 "나를 따라오라" 하신 것은 충성을 요구하신 것입니다.
+                </p>
+                <div class="p-3 bg-slate-50 dark:bg-slate-900/60 rounded-lg border-l-4 border-slate-400 serif-text mb-4">
+                    "주여 주여 하는 자가 천국에 들어갈 것이 아니요, 아버지의 뜻대로 행하는 자라야 들어가리라." (마 7:21 참조)
+                </div>
+                <p>
+                    교회는 주 예수님께 충성하는 자들이 모인 곳입니다. 이 자리에 모였다는 것은 세상에도, 돈에도, 나의 꿈에도 충성하지 않고 예수님께 충성하겠다는 고백입니다.
+                </p>
+            </section>
+
+            <!-- 대지 6 -->
+            <section id="sec6" class="bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-700/80 scroll-mt-20">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span class="px-3 py-1 bg-blue-600 text-white font-black text-sm rounded-lg">6</span>
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white serif-text">너와 네 집이 구원을 얻으리라</h3>
+                </div>
+
+                <p class="text-lg font-bold text-blue-700 dark:text-blue-400 mb-4">
+                    — 가정이 구원의 기본 단위
+                </p>
+                <p class="mb-4">
+                    하나님께서 구원을 주시기를 원하는 기본 단위는 개인보다 <strong class="hl font-bold">가정</strong>입니다. 성경 전체에서 이것을 확인할 수 있습니다.
+                </p>
+
+                <!-- 구약과 신약의 가정 구원 사례 카드 목록 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-6">
+                    <div class="p-3 bg-slate-50 dark:bg-slate-900/60 rounded-lg border border-slate-200 dark:border-slate-700">
+                        <span class="font-bold text-amber-600 dark:text-amber-400">노아</span> — 의인 노아 한 사람을 보시고 온 가족 구원 (창 6장)
+                    </div>
+                    <div class="p-3 bg-slate-50 dark:bg-slate-900/60 rounded-lg border border-slate-200 dark:border-slate-700">
+                        <span class="font-bold text-amber-600 dark:text-amber-400">롯</span> — 의인 롯 한 사람 때문에 롯의 가정 구원 (창 19장)
+                    </div>
+                    <div class="p-3 bg-slate-50 dark:bg-slate-900/60 rounded-lg border border-slate-200 dark:border-slate-700">
+                        <span class="font-bold text-amber-600 dark:text-amber-400">유월절</span> — 가정 단위로 양을 잡고 피를 바름 (출 12장)
+                    </div>
+                    <div class="p-3 bg-slate-50 dark:bg-slate-900/60 rounded-lg border border-slate-200 dark:border-slate-700">
+                        <span class="font-bold text-amber-600 dark:text-amber-400">라합</span> — 붉은 줄을 매어 온 식구가 구원받음 (수 2장)
+                    </div>
+                    <div class="p-3 bg-slate-50 dark:bg-slate-900/60 rounded-lg border border-slate-200 dark:border-slate-700">
+                        <span class="font-bold text-amber-600 dark:text-amber-400">삭개오</span> — "오늘 이 집에 구원이 임하였다" (눅 19:9)
+                    </div>
+                    <div class="p-3 bg-slate-50 dark:bg-slate-900/60 rounded-lg border border-slate-200 dark:border-slate-700">
+                        <span class="font-bold text-amber-600 dark:text-amber-400">고넬료 / 루디아</span> — 온 가족이 함께 구원과 세례를 받음
+                    </div>
+                </div>
+
+                <div class="p-4 bg-red-50 dark:bg-red-950/20 rounded-xl border border-red-200 dark:border-red-900/50">
+                    <h4 class="font-bold text-red-700 dark:text-red-400 mb-2 flex items-center">
+                        <i class="fa-solid fa-triangle-exclamation mr-2"></i> 그러나 개인의 결단이 반드시 필요하다
+                    </h4>
+                    <p class="text-sm sm:text-base text-slate-700 dark:text-slate-300">
+                        가족 중 나 하나만 믿으면 온 가족이 자동으로 구원받는 것입니까? 그렇지 않습니다. 노아의 가족도 방주에 타야 했고, 롯의 사위들은 농담으로 여겨 구원받지 못했습니다. 유월절에도 피 바른 집 안에 있어야 했습니다. <strong class="font-bold underline decoration-red-400">하나님은 한 가정을 구원하기 원하시지만, 각자의 인격적 결단이 반드시 필요합니다.</strong>
+                    </p>
+                </div>
+            </section>
+
+            <!-- 대지 7 -->
+            <section id="sec7" class="bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-700/80 scroll-mt-20">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span class="px-3 py-1 bg-blue-600 text-white font-black text-sm rounded-lg">7</span>
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white serif-text">가정이 작은 교회, 교회는 큰 가정</h3>
+                </div>
+
+                <p class="mb-4">
+                    가정이 구원의 기본 단위라는 말은 곧 <strong class="hl font-bold">가정이 작은 교회</strong>라는 의미입니다. 교회의 기본 단위는 구역이 아니라 가정입니다.
+                </p>
+                <p class="mb-4">
+                    교회를 교회 되게 하는 핵심은 <strong class="text-blue-600 dark:text-blue-400 font-bold">예배</strong>입니다. 교회가 예배하지 않는다면 교회가 아닙니다. 예배는 선택이 아닙니다. 가정이 작은 교회라면, 가정에도 가정 예배가 있어야 합니다.
+                </p>
+                <p class="mb-4">
+                    가정이 작은 교회라면 거꾸로 <strong class="hl font-bold">교회는 큰 가정</strong>이기도 합니다. 우리는 예수 안에서 한 가족입니다. 가정이기에 교회에는 교제가 있어야 합니다. 함께 살지만 대화가 없고 친밀함이 없다면 가정이 아닙니다.
+                </p>
+                <p class="p-4 bg-slate-50 dark:bg-slate-900/60 rounded-xl border-l-4 border-indigo-500">
+                    가정에 중요한 일이 있는데 방관하는 사람은 가정 구성원이 아닙니다. 교회에 대한 관심도, 기도도, 참여도 없다면 가정 구성원이 아닌 것입니다. 가족 구성원이라는 마음으로 교회를 위해 함께 관심을 갖고 교제하며 기도하기를 원합니다.
+                    <br><br>
+                    <span class="text-sm font-semibold text-indigo-700 dark:text-indigo-300">
+                        ※ 하나님은 가정과 교회를 지키기 원하시고, 사탄은 가정과 교회를 깨뜨리기 원한다는 사실을 잊지 마시기 바랍니다.
+                    </span>
+                </p>
+            </section>
+
+            <!-- 결론 및 기도 -->
+            <section id="conclusion" class="bg-gradient-to-br from-slate-900 to-blue-950 text-white p-6 sm:p-10 rounded-2xl shadow-xl scroll-mt-20">
+                <div class="mb-6 border-b border-slate-700 pb-4">
+                    <span class="text-xs font-bold text-amber-400 tracking-widest uppercase">CONCLUSION</span>
+                    <h3 class="text-2xl sm:text-3xl font-bold serif-text mt-1 text-white">결론</h3>
+                </div>
+                
+                <p class="text-base sm:text-lg text-slate-200 leading-relaxed mb-8">
+                    어떻게 구원받습니까? <strong class="text-amber-300 font-bold">주 예수님을 믿어야 구원받습니다.</strong> 예수님을 주님으로 믿고 예수님께 충성할 때 구원받습니다.<br>
+                    주 예수를 믿을 때 나만이 아닌 우리 가정을 구원하기 원하시는 하나님의 뜻을 깨달으시기 바랍니다. 구원이 저와 여러분의 집에 임하기를 예수님의 이름으로 축원합니다.
+                </p>
+
+                <!-- 기도문 박스 -->
+                <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/20">
+                    <h4 class="text-amber-300 font-bold text-lg mb-3 flex items-center">
+                        <i class="fa-solid fa-hands-praying mr-2"></i> 기도
+                    </h4>
+                    <p class="serif-text text-base sm:text-lg text-slate-100 italic leading-relaxed">
+                        "복음, 기쁜 소식을 주신 하나님을 찬양합니다. 예수님이 우리의 주인 되심을 고백합니다. 회개와 믿음과 충성으로 나아갑니다. 우리 가정이 구원받기를 원합니다. 예배와 교제와 참여로 교회답게, 가족답게, 은혜에 응답하게 하옵소서. 예수님의 이름으로 기도합니다. 아멘."
+                    </p>
+                </div>
+            </section>
+
+        </article>
+    </main>
+
+    <!-- 맨 위로 가기 버튼 (요청 기능 추가) -->
+    <button id="topBtn" onclick="scrollToTop()" title="맨 위로 가기">
+        ↑<br>TOP
+    </button>
+
+    <!-- 푸터 -->
+    <footer class="mt-16 bg-slate-900 text-slate-400 text-xs sm:text-sm py-10 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 text-center space-y-4">
+            <div class="flex justify-center space-x-6 text-slate-400">
+                <button onclick="scrollToTop()" class="hover:text-white transition"><i class="fa-solid fa-arrow-up mr-1"></i> 맨 위로</button>
+                <button onclick="copyURL()" class="hover:text-white transition"><i class="fa-solid fa-link mr-1"></i> 공유하기</button>
+                <button onclick="window.print()" class="hover:text-white transition"><i class="fa-solid fa-print mr-1"></i> 인쇄하기</button>
+            </div>
+            <hr class="border-slate-800 w-24 mx-auto">
+            <!-- 요청하신 푸터 문구 -->
+            <p class="font-medium text-slate-300">
+                © 2026 말씀묵상. 푸른동산 지산교회 정재학 목사
+            </p>
+        </div>
+    </footer>
+
+    <!-- 자바스크립트 스크립트 -->
+    <script>
+        // 1. 화면 스크롤에 따라 TOP 버튼 보이기/숨기기 & Progress Bar
+        window.onscroll = function() { scrollFunction() };
+
+        function scrollFunction() {
+            // TOP 버튼 토글 (300px 기준)
+            const topBtn = document.getElementById("topBtn");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                topBtn.style.display = "block";
+            } else {
+                topBtn.style.display = "none";
+            }
+
+            // 상단 스크롤 진행바 계산
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollProgress").style.width = scrolled + "%";
+        }
+
+        // 2. 부드럽게 맨 위로 스크롤
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 3. 폰트 크기 조절 기능
+        let currentFontSize = 100; // %
+        function changeFontSize(delta) {
+            currentFontSize += delta * 5;
+            if (currentFontSize < 85) currentFontSize = 85;
+            if (currentFontSize > 130) currentFontSize = 130;
+            document.getElementById("contentArea").style.fontSize = currentFontSize + "%";
+        }
+
+        // 4. 다크 모드 토글 기능
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const themeIcon = document.getElementById("themeIcon");
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                themeIcon.className = "fa-solid fa-moon";
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                themeIcon.className = "fa-solid fa-sun";
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // 초기 테마 설정 확인
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            document.getElementById("themeIcon").className = "fa-solid fa-sun";
+        } else {
+            document.documentElement.classList.remove('dark');
+            document.getElementById("themeIcon").className = "fa-solid fa-moon";
+        }
+
+        // 5. URL 복사 기능
+        function copyURL() {
+            const dummy = document.createElement('input');
+            document.body.appendChild(dummy);
+            dummy.value = window.location.href;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+            
+            // 커스텀 토스트 알림
+            showToast("페이지 링크가 복사되었습니다.");
+        }
+
+        // Toast 함수
+        function showToast(message) {
+            const toast = document.createElement("div");
+            toast.className = "fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-slate-800 text-white text-xs sm:text-sm px-4 py-2.5 rounded-full shadow-lg z-50 transition-opacity duration-300 opacity-0 pointer-events-none";
+            toast.innerText = message;
+            document.body.appendChild(toast);
+
+            setTimeout(() => { toast.classList.remove("opacity-0"); }, 10);
+            setTimeout(() => {
+                toast.classList.add("opacity-0");
+                setTimeout(() => { document.body.removeChild(toast); }, 300);
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
