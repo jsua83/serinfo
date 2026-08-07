@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내가 믿나이다 - 요 9: 24~41</title>
+    <!-- 폰트 및 Tailwind CSS 로드 -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 기본 폰트 설정 (본문은 고딕, 제목/말씀은 명조 계열 혼합 사용) */
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #fcfcfc; /* 따뜻하고 부드러운 배경색 */
+            color: #333333;
+            word-break: keep-all; /* 한국어 줄바꿈 최적화 */
+        }
+        
+        .title-font {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        /* 성경 구절 인용구 스타일 */
+        .bible-verse {
+            background-color: #f3f4f6;
+            border-left: 4px solid #6366f1; /* 부드러운 남색 포인트 */
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+            font-family: 'Nanum Myeongjo', serif;
+            color: #4b5563;
+            line-height: 1.7;
+        }
+
+        /* 강조 텍스트 하이라이트 (형광펜 효과) */
+        .highlight {
+            background: linear-gradient(180deg, rgba(255,255,255,0) 60%, #ffd700 60%);
+            padding: 0 4px;
+            font-weight: 500;
+        }
+
+        /* 본문 문단 스타일 */
+        p {
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        /* 번호 목록 스타일 커스텀 */
+        ol.custom-list {
+            counter-reset: my-counter;
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        ol.custom-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        ol.custom-list li::before {
+            counter-increment: my-counter;
+            content: counter(my-counter) ".";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #6366f1;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* TOP 버튼 커스텀 스타일 */
+        #topBtn {
+            display: none; /* 스크립트로 제어 */
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #4f46e5;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.2s;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        #topBtn:hover {
+            background-color: #4338ca;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="max-w-3xl mx-auto pt-16 pb-8 px-5 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold title-font text-gray-900 leading-tight mb-4">
+            내가 믿나이다
+        </h1>
+        <p class="text-lg text-gray-500 font-medium">요한복음 9: 24~41</p>
+        <div class="w-16 h-1 bg-indigo-500 mx-auto mt-6 opacity-50"></div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-5 pb-16">
+        
+        <!-- 섹션: 고백은 삶의 시작 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold title-font text-gray-800 mb-5 border-b pb-2 border-gray-200">
+                고백은 삶의 시작
+            </h2>
+            <p>"내가 믿나이다" 고백은 참으로 귀한 고백입니다. 하나님이 얼마나 기뻐하시는 고백입니까?</p>
+            <p>그런데 믿음의 고백이 중요하기는 하지만, <span class="highlight">고백은 생활의 시작</span>입니다. "내가 믿나이다" 고백으로 모든 것이 끝나는 것이 아니고 신앙인으로서의 삶이 비로소 시작되는 것입니다. 신앙인들에게는 믿음의 고백 위에 집을 세우는 것입니다.</p>
+            <p><strong>신앙이란 입술로 뱉어낸 고백을 근거로 평생 신앙인으로서 살아가야 하는 것입니다.</strong></p>
+            
+            <p class="mt-6">24~34절은 바리새인과 맹인과의 대화입니다. 사실 대화라기보다 거의 일방적인 취조에 가깝습니다. 35~41절은 예수님과 맹인 간의 대화입니다.</p>
+            <p>믿는 자의 길에도 두 갈래 길이 있는데, <strong>바리새인처럼 믿는 길</strong>이 있고 <strong>예수님처럼 믿는 길</strong>이 있습니다.</p>
+            
+            <p>바리새인도 믿는 자입니다. 하나님의 아들 예수님을 안 믿었을 뿐이지, 하나님을 믿는 자입니다. 그 당시 바리새인 하면 누구보다도 잘 믿는 자들의 대명사였습니다. 그러나 지금 우리가 생각하는 바리새인은 '잘못 믿는 자'들의 대명사입니다.</p>
+            <p>그래서 믿는 자가 되는 것도 중요하지만, 바리새인과 맹인간의 대화를 통해 드러나는 <em>'바리새인처럼 믿으면 안 되겠구나', '잘못된 믿음의 길을 가면 안 되겠다'</em>는 생각과 결단을 했으면 좋겠습니다.</p>
+            <p class="text-indigo-600 font-medium">내 안에 이런 바리새인의 잘못된 모습이 없지는 않은지 점검하기를 원합니다.</p>
+        </section>
+
+        <!-- 섹션: 바리새인의 6가지 문제점 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold title-font text-gray-800 mb-5 border-b pb-2 border-gray-200">
+                바리새인처럼 믿지 않기 위한 6가지 점검
+            </h2>
+
+            <!-- 1 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-bold text-gray-800 mb-3">첫째, 은혜로운 말 뒤에 숨은 것</h3>
+                <div class="bible-verse">
+                    24절. 그들이 맹인이었던 사람을 두 번째 불러 이르되, "너는 하나님께 영광을 돌리라."
+                </div>
+                <p>얼마나 신앙적인 말입니까. 은혜로운 말입니다. 그런데 문제는 그 다음 말입니다.</p>
+                <p>바리새인의 말에 대하여 맹인이 몇 가지 말을 하니까, 바리새인들이 화가 나서 반응하기를 <strong>(28절) "그들이 욕하여 이르되"</strong> 방금 전 "하나님께 영광을 돌려라" 하고서 자기 마음이 안 맞으니까 곧바로 욕을 했대요. 은혜로운 말 뒤 욕으로 인하여 향기를 잃어버렸습니다.</p>
+                <p>우리는 얼마든지 이렇게 살 수 있습니다. 신앙생활 하다 보니 여러 가지 신앙의 언어를 배웁니다. '아버지', '주여', '하나님께 영광', '은혜입니다'. 얼마든지 이런 말을 학습하여 할 수 있습니다.</p>
+                <p>중요한 것은 <span class="highlight">그 다음에 내가 하는 말</span>입니다. 내가 신앙인의 말을 뱉어낸 것이 중요한 것이 아니라, 그 다음 내가 하는 말이 더 중요합니다. 사람은 그 마음에 가득한 것을 입으로 뱉어낼 수밖에 없습니다. 바리새인들 마음속에는 정말로 하나님의 영광에 대한 것이 가득하지 않았습니다.</p>
+                <p>바리새인의 길로 가면 안 됩니다. <strong>신앙의 말을 하는 것이 중요한 것이 아니라, 계속해서 은혜의 말을 하는 것이 중요합니다.</strong></p>
+            </div>
+
+            <!-- 2 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-bold text-gray-800 mb-3">둘째, 판단하는 신앙인</h3>
+                <div class="bible-verse">
+                    24절 하나님께 영광을 돌리라 한 다음, 우리는 이 사람이, 예수님이 죄인인 줄 아노라.<br>
+                    16절 이 사람이 안식일을 지키지 아니하니 하나님께로부터 온 자가 아니다.
+                </div>
+                <p>예수님을 죄인이라고 단정하고 판단합니다. 판단의 근거가 안식일에 병을 고쳤다는 것입니다. 바리새인들의 문제는 <strong>다른 사람을 판단하는 죄</strong>를 짓습니다. 다른 사람의 겉모습을 보고, 외적으로 안식일을 범했다는 것으로 죄인이라고 함부로 판단합니다.</p>
+                <p>신앙생활 하다 보니까 우리가 이렇게 되기가 참 쉽더라고요. 어떤 성도님을 보면서 "저 양반 주일도 안 지키고, 십일조도 안 하고 ~". 주일 성수와 십일조가 귀한 것이긴 하지만, 저 사람이 좋은 신앙인이다 아니다 판단하는 것은 하나님이 좋아하지 않으심을 아시기 바랍니다.</p>
+                <p>초신자로 가르침을 못 받아서, 믿음이 없어서 그럴 수 있습니다. 야고보서에서 <em>"너는 누구이기에 내 이웃을 판단하느냐?"</em>라고 묻습니다.</p>
+                <p>창세기 50장에 요셉의 형제들이 요셉을 팔았습니다. 그런데 용서를 받았습니다. 아버지가 돌아가시자 형제들이 두려워하며 요셉에게 용서를 구합니다. 요셉이 형들에게 <strong>"두려워하지 마소서. 내가 하나님을 대신하리이까?"</strong>라고 말합니다. 내가 하나님의 자리에 있습니까?라는 뜻입니다.</p>
+                <p><span class="highlight">하나님의 자리는 어떤 자리입니까? 바로 '판단의 자리'입니다.</span> 신앙인으로 함부로 판단하는 것은, 내가 하나님의 자리에 서서 사람을 판단하고 있는 것임을 깨달으시기 바랍니다. 바리새인은 판단하는 신앙인입니다.</p>
+            </div>
+
+            <!-- 3 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-bold text-gray-800 mb-3">셋째, 사람의 제자가 된 신앙인</h3>
+                <div class="bible-verse">
+                    28절. 그들이 욕하여 이르되, 너는 그의 제자이나 우리는 모세의 제자라.
+                </div>
+                <p>모세는 위대한 하나님의 사람입니다. 하나님께 그 누구보다도 귀하게 쓰임 받았던 사람입니다. 그런데 우리가 '모세의 제자'라고 말하는 것을 하나님이 기뻐하실까요?</p>
+                <p>우리는 사람의 제자가 된 신앙인이 아니라 <strong>예수님의 제자</strong>가 되어야 합니다.</p>
+            </div>
+
+            <!-- 4 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-bold text-gray-800 mb-3">넷째, 과거의 역사는 인정해도 지금은 부인하는 신앙인</h3>
+                <div class="bible-verse">
+                    29절. 하나님이 모세에게는 말씀하신 줄을 우리가 알거니와 (과거에 역사하신 하나님은 내가 알거니와) 이 사람은 어디서 왔는지 알지 못하노라.
+                </div>
+                <p>지금 눈앞에서 하나님의 역사가 일어났습니다. 맹인이 눈을 떴습니다. 그런데 모르겠답니다. <strong>과거에 역사하신 하나님은 인정하겠는데, 지금 동일하게 역사하시는 하나님은 인정 못 하겠다는 것</strong>입니다.</p>
+                <p>마태복음 12장에서 귀신 들려 눈멀고 말 못 하는 사람을 예수님이 고쳐 주시자, 바리새인들이 <em>"귀신의 왕 바알세불을 힘입어서 귀신을 쫓아내었다"</em>고 합니다. 하나님께로부터 왔다고 인정하지 않으니까 귀신에게서 왔다는 것입니다.</p>
+                <p>성령의 역사에 대하여 귀신의 역사라고 평가하는 바리새인들을 향하여 예수님은 <span class="highlight">"사람에 대한 모든 죄와 모독은 사하심을 얻되, 성령을 모독하는 것은 사하심을 얻지 못한다"</span>고 경고하셨습니다.</p>
+                <p>살인이나 간음과 같은 큰 죄도 용서받았습니다. (모세, 다윗의 예) 그런데 성령의 역사를 귀신의 역사로 돌리는 것은 무서운 죄입니다. 바리새인들은 과거 모세를 통한 하나님의 일하심은 인정하면서도 지금 역사하시는 성령님은 못 믿겠다고 한 것입니다. 성령 훼방죄를 짓지 않기를 주님의 이름으로 부탁드립니다.</p>
+            </div>
+
+            <!-- 5 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-bold text-gray-800 mb-3">다섯째, 교만하여 배우지 않으려는 신앙인</h3>
+                <p>맹인이 <em>"이 사람이 하나님께로부터 오지 않았으면 어떻게 이런 일을 할 수 있느냐"</em>고 아주 옳은 말을 합니다. 이에 대한 바리새인의 반응은 <strong>"네가 온전히 죄 가운데서 나서 우리를 가르치느냐?"</strong> 였습니다.</p>
+                <p>너는 구걸하던 거렁뱅이 죄인이고, 나는 성경을 연구하고 율법을 지키는 의인인데 네가 감히 나를 가르치려 하느냐는 것입니다. 여기서 드러나는 바리새인의 문제는 <span class="highlight">교만</span>입니다.</p>
+                <p>신앙생활 하다 보면 영적인 교만의 길로 가기가 너무나 쉽습니다. 바리새인들처럼 '잘 믿는다'고 하는 사람들에게 교만이 쉽게 찾아옵니다. (성경 100독, 40일 금식 등을 내세우는 교만)</p>
+                <p><strong>하나님은 교만한 자를 대적하십니다. 겸손한 자만이 하나님께 가르침을 받을 수 있습니다.</strong> 내가 이미 다 안다는 것이 바리새인의 길이고, 반대의 길은 예수 그리스도를 닮은 겸손의 길입니다.</p>
+                
+                <div class="bg-indigo-50 p-6 rounded-lg mt-5">
+                    <h4 class="font-bold text-indigo-900 mb-2">사도 바울의 겸손해지는 여정</h4>
+                    <p class="text-sm text-indigo-800 mb-2">바울은 처음에 교만한 자였으나, 예수를 믿으면 믿을수록 더 겸손해졌습니다.</p>
+                    <ul class="list-disc pl-5 space-y-2 text-sm text-indigo-900">
+                        <li><strong>고린도전서 (AD 55년경):</strong> "나는 <span class="font-bold underline">사도 중에 가장 작은 자</span>라" (고전 15:9)</li>
+                        <li><strong>에베소서 (AD 60년경):</strong> "모든 <span class="font-bold underline">성도 중에 지극히 작은 자보다 더 작은 나</span>에게..." (엡 3:8)</li>
+                        <li><strong>디모데전서 (AD 64년경):</strong> "그리스도 예수께서 죄인을 구원하시려고 세상에 임하셨다 하였도다. <span class="font-bold underline text-red-600">죄인 중에 내가 괴수니라</span>" (딤전 1:15)</li>
+                    </ul>
+                    <p class="text-sm text-indigo-800 mt-3 font-medium">예수를 믿으면 믿을수록 더 겸손해지는 것이 주님이 원하시는 길입니다.</p>
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-bold text-gray-800 mb-3">여섯째, 누군가를 쫓아내는 신앙인</h3>
+                <div class="bible-verse">
+                    34절. "우리를 가르치느냐?" 이 말로 끝나지 않았습니다. <strong>이에 쫓아내어 보내니라.</strong>
+                </div>
+                <p>놀랍게도 나보다 먼저 믿은 사람들이 나중에 믿은 이들을 쫓아내는 일들이 있습니다. 입으로는 나가라고 안 하지만, 표정과 언어, 태도와 <span class="highlight">삶의 모습으로 그리스도 바깥으로 밀어냅니다.</span></p>
+                <p>부모의 모습을 보고 자녀가 교회를 떠난다면 부모가 자식을 쫓아낸 것입니다. 교회 안에서 터줏대감 행세를 하며 누군가를 밀어낸다면, 나는 바리새인의 길을 가고 있는 것입니다.</p>
+                <p>반대로 예수님은 그 사람이 쫓겨났다는 말을 들으시고 <strong>그를 직접 만나주셨습니다(35절).</strong> 우리가 교회에서 쫓겨난 자들을 다시 만나 주는 자들이 되기를 바랍니다.</p>
+            </div>
+        </section>
+
+        <!-- 섹션: 결론 -->
+        <section class="mb-12 bg-gray-50 p-6 md:p-8 rounded-xl border border-gray-200">
+            <h2 class="text-2xl font-bold title-font text-gray-900 mb-5 border-b-2 pb-2 border-gray-300">
+                어떤 신앙인이 되시겠습니까?
+            </h2>
+            <p class="font-bold text-gray-700 mb-3">지금까지 신앙인의 잘못된 길(바리새인의 길) 6가지를 정리했습니다.</p>
+            <ol class="custom-list mb-6 text-gray-700">
+                <li>은혜로운 말은 하지만 뒤따르는 말이 은혜롭지 않습니다. (그냥 한 말입니다)</li>
+                <li>판단하는 신앙인이 되었습니다.</li>
+                <li>예수의 제자가 아닌 사람의 제자가 되었습니다.</li>
+                <li>과거의 하나님의 역사는 인정하지만, 지금 일하시는 하나님에 대해서는 무지합니다.</li>
+                <li>교만하여 배우지 않으려는 신앙인이 되었습니다.</li>
+                <li>누군가를 쫓아내는 신앙인이 되었습니다.</li>
+            </ol>
+            
+            <p>이들을 향해 예수님은 <em>"화 있을진저, 외식하는 서기관과 바리새인들이여"</em>라고 책망하셨습니다.</p>
+            
+            <p class="mt-4 font-bold text-xl text-indigo-700">하나님이 기뻐하시는 자로</p>
+            <p>마태복음 3장에서 예수님이 세례를 받고 올라오실 때 하늘에서 소리가 들렸습니다.</p>
+            <div class="bg-white p-4 rounded shadow-sm border border-indigo-100 my-4 text-center italic text-indigo-900">
+                "이는 내 사랑하는 아들이요 내 기뻐하는 자라" (마 3:17)
+            </div>
+            <p>우리의 신앙 목표는 바로 이 평가를 받는 것입니다. 하나님은 바리새인들을 사랑하셨을지는 몰라도, 기뻐하지는 않으셨을 것입니다. 하나님은 모든 사람을 사랑하시지만, 모든 사람을 기뻐하지는 않으십니다.</p>
+            <p class="font-medium">"나는 하나님께 사랑받은 자요, 내가 너를 기뻐하노라"는 말을 들을 수 있는 사람입니까? 아니라면 회개하는 시간이 되기를 원합니다. 이제 바리새인의 길이 아니라 예수 그리스도의 길, 하나님이 기뻐하시는 겸손의 길을 걷기를 소원합니다.</p>
+        </section>
+
+        <!-- 기도 -->
+        <section class="text-center italic text-gray-600 mt-12 mb-8">
+            <h3 class="font-bold text-xl mb-4 not-italic title-font text-gray-800">기도하겠습니다.</h3>
+            <p>신앙의 고백은 끝이 아니라 그리스도인으로서 살아가는 삶의 시작입니다.<br>
+            신앙인의 언어를 사용하는 것보다, 겸손과 사랑의 삶을 살게 하옵소서.<br>
+            바리새인의 길이 아닌 날마다 예수 그리스도를 닮아가는 겸손의 길을 걸어가게 하옵소서.<br>
+            하나님의 사랑을 넘어, 하나님의 기쁨이 되는 신앙으로, 하나님의 인정을 받게 하옵소서.<br>
+            예수님의 이름으로 기도합니다. 아멘.</p>
+        </section>
+        
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="bg-gray-100 py-8 text-center text-sm text-gray-500 border-t border-gray-200">
+        © 2026 말씀묵상. 푸른동산 지산교회 정재학 목사
+    </footer>
+
+    <!-- 맨 위로 가기 버튼 -->
+    <button id="topBtn" onclick="scrollToTop()">↑<br>TOP</button>
+
+    <script>
+        // 화면 스크롤에 따라 TOP 버튼 보이기/숨기기
+        window.onscroll = function() { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                document.getElementById("topBtn").style.display = "block";
+            } else {
+                document.getElementById("topBtn").style.display = "none";
+            }
+        }
+
+        // 부드럽게 맨 위로 스크롤
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script> 
+</body>
+</html>
