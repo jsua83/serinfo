@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선한 목자, 예수 - 요 10: 1~15</title>
+    
+    <!-- 폰트 및 Tailwind CSS 로드 -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 기본 폰트 설정 (본문은 고딕, 제목/말씀은 명조 계열 혼합 사용) */
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #fcfcfc; /* 따뜻하고 부드러운 배경색 */
+            color: #333333;
+            word-break: keep-all; /* 한국어 줄바꿈 최적화 */
+        }
+        
+        .title-font {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        /* 성경 구절 인용구 스타일 */
+        .bible-verse {
+            background-color: #f3f4f6;
+            border-left: 4px solid #6366f1; /* 부드러운 남색 포인트 */
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+            font-family: 'Nanum Myeongjo', serif;
+            color: #374151;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* 강조 텍스트 하이라이트 (형광펜 효과) */
+        .highlight {
+            background: linear-gradient(180deg, rgba(255,255,255,0) 60%, #ffe066 60%);
+            padding: 0 4px;
+            font-weight: 500;
+        }
+        
+        .highlight-blue {
+            background: linear-gradient(180deg, rgba(255,255,255,0) 60%, #93c5fd 60%);
+            padding: 0 4px;
+            font-weight: 500;
+        }
+
+        .highlight-red {
+            background: linear-gradient(180deg, rgba(255,255,255,0) 60%, #fca5a5 60%);
+            padding: 0 4px;
+            font-weight: 500;
+        }
+
+        /* 본문 문단 스타일 */
+        p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        /* 소제목 스타일 */
+        h3.sub-title {
+            color: #4338ca;
+            font-weight: 700;
+            font-size: 1.35rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+        }
+
+        /* 번호 목록 스타일 커스텀 */
+        ol.custom-list {
+            counter-reset: my-counter;
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        ol.custom-list li {
+            position: relative;
+            padding-left: 2.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        ol.custom-list li::before {
+            counter-increment: my-counter;
+            content: counter(my-counter) ".";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #6366f1;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* TOP 버튼 커스텀 스타일 */
+        #topBtn {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #4f46e5;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: background-color 0.3s, transform 0.2s;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        #topBtn:hover {
+            background-color: #4338ca;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="max-w-3xl mx-auto pt-16 pb-8 px-5 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold title-font text-gray-900 leading-tight mb-4">
+            선한 목자, 예수
+        </h1>
+        <p class="text-lg text-gray-500 font-medium">요한복음 10: 1~15</p>
+        <div class="w-16 h-1 bg-indigo-500 mx-auto mt-6 opacity-50"></div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-5 pb-16">
+        
+        <section class="mb-12">
+            <p class="text-center text-lg text-gray-700 bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8">
+                <span class="font-bold">1절</span>, 예수님이 말씀하십니다. "내가 진실로 진실로 너희에게 이르노니"<br>
+                <span class="font-bold">7절</span>, 한 번 더 말씀하십니다. "내가 진실로 진실로 너희에게 말하노니"<br>
+                <span class="text-indigo-600 font-medium mt-2 block">진실로 진실로, 나는 양의 문이다, 나는 선한 목자다. 말씀하셨습니다.</span>
+            </p>
+            
+            <h2 class="text-2xl font-bold title-font text-gray-800 mt-8 mb-5 border-b-2 pb-2 border-indigo-200 inline-block">
+                양의 문이신 예수님
+            </h2>
+            <p>나는 양의 문이다. 예수님은 우리가 다 통과해야 하는 문이십니다.</p>
+            <div class="bible-verse">
+                <strong>9절</strong> 내가 문이니, 누구든지 나로 말미암아 들어가면 구원을 받고.
+            </div>
+            <p>교회에 오시기 위해서도 문을 통과해야 들어와 앉으실 수 있습니다. 교회 문을 통하여 들어온 것이 중요한 것이 아니라, <span class="highlight">예수 그리스도라는 문을 통과하는 것</span>이 더 중요합니다.</p>
+            <p>교회 안에는 누구든지 들어올 수 있습니다. 그러나 교회 안에 들어왔다고 다 구원받는 것은 아닙니다. 우리 각자가 <strong>예수 그리스도를 나의 구주로 고백해야</strong>, 내가 예수님이라는 문을 통과해야 구원받게 됩니다.</p>
+            
+            <div class="bg-gray-50 p-5 rounded-lg text-gray-700 border-l-4 border-gray-300 my-6">
+                <p class="font-bold text-gray-900 mb-2">하나님의 구원 초청은 모든 사람을 향한 것입니다.</p>
+                <p class="text-sm italic">"내가 복음을 부끄러워하지 아니하노니, 이 복음은 모든 믿는 자에게 구원을 주시는 하나님의 능력이 됨이라." (로마서 1:16)</p>
+            </div>
+            <p class="font-medium text-lg text-center my-6">누구든지 예수 믿으면 차별 없이 구원받게 되는 줄로 믿습니다.</p>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold title-font text-gray-800 mb-5 border-b-2 pb-2 border-indigo-200 inline-block">
+                선한 목자
+            </h2>
+            <p>예수님은 양의 문인 동시에 우리의 목자가 되시는데, 11절에 그냥 목자가 아니라 <strong>"나는 선한 목자다. 나는 좋은 목자다, 나 좋은 사람이다."</strong>라고 하십니다.</p>
+            <p>예수님이 이것을 알아주기 원하십니다. 예수님이 나의 목자 되시는 것만이 아니라, 참 좋은 목자, 선한 목자라는 것을 고백하기를 원합니다.</p>
+
+            <h3 class="sub-title">1. 달란트 비유 — 하나님을 오해하지 말라</h3>
+            <p>실제로 예수님이 선한 분이라는 것을, 하나님이 좋은 분이라는 것을 알지 못하면, 주님의 세밀하신 것을 놓치게 됩니다. 대표적인 예가 마태복음 25장 달란트 비유입니다.</p>
+            <p>다섯 달란트 받은 자, 두 달란트 받은 자는 열심히 일해서 각각 남겼지만, 한 달란트 받은 자는 일하지 않았습니다. 주인이 책망하신 진짜 이유는 무엇일까요?</p>
+            <div class="bible-verse text-sm">
+                <strong>24절</strong> ...주인이여 당신은 굳은 사람이라 심지 않은 데서 거두고 헤치지 않은 데서 모으는 줄로 내가 알았으므로, 두려워하여 나가서 당신의 달란트를 땅에 감추어 두었나이다.
+            </div>
+            <p>당신은 참 무서운 사람인 것 같다며 차라리 감췄다고 합니다. 주인이 정말 화가 나신 것은 일 안 해서가 아니라, <span class="highlight-red">주인을 나쁜 분으로 오해하고 있었다는 것</span>입니다.</p>
+            <p>두 달란트, 다섯 달란트 받은 자가 열심히 일할 수 있었던 전제는 <strong>'선한 주인을 향한 신뢰'</strong>가 있었기 때문입니다. 무엇보다도 <span class="highlight">하나님은 절대적으로 공평하시며 참으로 좋으신 분</span>임을 알아야 합니다. 예수님은 선한 목자십니다.</p>
+
+            <h3 class="sub-title">2. 이름을 각각 아시는 목자</h3>
+            <div class="bible-verse">
+                <strong>3절</strong> ...그는 자기 양의 이름을 각각 불러 인도하여 내시는 분이십니다.
+            </div>
+            <p>예수님은 우리 한 사람 한 사람의 이름을 각각 아시는 선한 목자이십니다. 뽕나무 위에 숨어있던 삭개오를 향해 "저분 이름이 뭐지?" 묻지 않으시고 "삭개오야, 내려오라" 하셨듯, 저와 여러분의 이름도 아십니다.</p>
+
+            <h3 class="sub-title">3. 나의 상태를 아시고 돌보시는 목자</h3>
+            <p>예수님은 우리의 이름만 아시는 것이 아니라 우리의 상태를 아시사 돌보시는 분이십니다. <strong class="text-indigo-600">"나는 내 양을 알고..."(14절)</strong></p>
+            <p>단지 내 이름만 아시는 것이 아니라, <span class="highlight-blue">나의 상태와 나의 처한 형편, 나의 처지를 다 알고 계십니다.</span> 기도할 때 상황을 설명하실 필요도 없습니다. "아버지 아시지요, 주님 다 아시지요." 작은 신음 소리에도 응답하여 주실 줄로 믿습니다.</p>
+
+            <h3 class="sub-title">4. 생명을 더 풍성히 얻게 하시는 목자</h3>
+            <div class="bible-verse">
+                <strong>10절</strong> 내가 온 것은 양으로 생명을 얻게 하고, 더 풍성히 얻게 하려는 것이라.
+            </div>
+            <p>예수님이라는 문으로 들어가는 자는 다 영생을 얻습니다. 그러나 죽으면 천국 가는 것이 다가 아닙니다. 예수를 믿으면 생명을 얻을 뿐만 아니라, 은혜 위의 은혜가 더해져서 <span class="highlight">생명을 더 풍성히</span> 얻게 될 줄로 믿습니다.</p>
+            <p>모태신앙으로 태어나 일찍부터 하나님의 은혜를 누리고 평생 주의 나라를 위하여 일하는 것은 억울한 것이 아니라 참으로 기쁜 일입니다.</p>
+
+            <h3 class="sub-title">5. 목숨을 버리신 목자</h3>
+            <p>주님이 선한 목자라는 가장 확실한 증거입니다. <strong>"나는 양을 위하여 목숨을 버리노라."(15절)</strong> 고대 근동 세계에서 한낱 재산에 불과했던 양을 위해 목숨을 버리는 존재가 예수님이십니다. 우리가 아직 죄인 되었을 때 우리를 위하여 죽으셨습니다.</p>
+        </section>
+
+        <section class="mb-12 bg-white p-6 md:p-8 rounded-xl border border-gray-200 shadow-sm">
+            <h2 class="text-2xl font-bold title-font text-gray-900 mb-5 border-b-2 pb-2 border-indigo-200 inline-block">
+                우리는 양입니다
+            </h2>
+            <p>주님이 양의 문이시고 선한 목자라면, <strong>우리는 성경이 말하는 양입니다.</strong> 순수하고 깨끗한 이미지만이 아닙니다.</p>
+            
+            <ul class="list-disc pl-5 mb-6 text-gray-700 space-y-3">
+                <li><span class="font-bold text-gray-900">제 갈 길로 가는 존재:</span> "우리는 다 양 같아서 그릇 행하여 각기 제 갈 길로 갔거늘" (사 53:6)</li>
+                <li><span class="font-bold text-gray-900">지독한 근시:</span> 앞 양의 엉덩이만 보고 따라가는, 한 치 앞도 모르는 인생입니다.</li>
+                <li><span class="font-bold text-gray-900">무방비 상태:</span> 발톱도, 이빨도, 빠른 다리도 없어 스스로를 보호할 능력이 전혀 없습니다.</li>
+            </ul>
+
+            <h3 class="font-bold text-indigo-700 text-xl mt-8 mb-3">이리 가운데 보내신 이유 — 절대적 의존</h3>
+            <p>주님이 제자들을 파송하며 <strong>"내가 너희를 보냄이 양을 이리 가운데로 보냄과 같도다" (마 10:16)</strong> 하셨습니다. 사자나 곰으로 만들지 않으시고 양 그대로 이리 가운데 보내시는 이유는 무엇일까요?</p>
+            <p class="font-bold text-lg text-gray-800 mt-4 mb-3 p-4 bg-indigo-50 rounded shadow-sm border-l-4 border-indigo-500">
+                "너는 나 없이는 살 수 없는 존재다. 내가 너와 함께 가겠다."
+            </p>
+            <p>하나님은 우리가 양으로서 언제나 <span class="highlight">주님을 절대적으로 의존(Dependence)하기를</span> 원하십니다. 예수를 믿은 날은 독립일(Independence Day)이 아니라 <strong>철저한 절대 의존일(Dependence Day)</strong>입니다.</p>
+            <p class="mt-4 text-gray-600 text-sm">※ 역사가 증명합니다. 로마 시대 기독교가 사자처럼 힘을 가졌을 때는 타락했지만, 초대교회 때 양처럼 힘이 없어 주님만을 절대적으로 의지했을 때 진정한 능력이 나타났습니다.</p>
+
+            <h3 class="font-bold text-indigo-700 text-xl mt-10 mb-4">양으로서 해야 할 일</h3>
+            <ol class="custom-list text-gray-800 mb-8">
+                <li>
+                    <span class="font-bold text-gray-900 text-lg">듣기 (3절)</span><br>
+                    <span class="text-sm text-gray-600">"양은 그의 음성을 듣나니"</span><br>
+                    가장 먼저 요구되는 것은 순종입니다. 하나님의 말씀을 잘 듣고 아멘으로 받아야 합니다.
+                </li>
+                <li>
+                    <span class="font-bold text-gray-900 text-lg">따르기 (4절)</span><br>
+                    <span class="text-sm text-gray-600">"양들이 그의 음성을 아는 고로 따라오되"</span><br>
+                    듣는 데서 그치지 않고 나를 던져 순종하며 따라가야 합니다.
+                </li>
+                <li>
+                    <span class="font-bold text-gray-900 text-lg">분별하기 (5절)</span><br>
+                    <span class="text-sm text-gray-600">"타인의 음성은 알지 못하는 고로... 도리어 도망하느니라"</span><br>
+                    이단과 사람의 거짓 음성을 분별하고 단호히 멀리 도망해야 합니다.
+                </li>
+            </ol>
+            
+            <div class="bg-indigo-600 p-8 rounded-xl text-center shadow-lg my-8">
+                <p class="text-indigo-100 font-bold text-lg mb-2">양으로서 반드시 해야 할 고백</p>
+                <p class="text-white text-2xl md:text-3xl font-bold mt-4 mb-4 leading-snug">
+                    "여호와는 나의 목자시니,<br>내게 부족함이 없으리로다."
+                </p>
+                <p class="text-indigo-200 font-medium mt-3 text-lg">
+                    "여호와는 나의 목자시니, 그거면 됐지!"<br>이 고백이 우리의 고백이 되기를 원합니다.
+                </p>
+            </div>
+        </section>
+
+        <section class="text-center text-gray-700 mt-12 mb-8 bg-gray-50 p-8 rounded-lg shadow-inner border border-gray-200">
+            <h3 class="font-bold text-xl mb-6 title-font text-indigo-900 border-b-2 pb-3 inline-block border-indigo-300">기도하겠습니다</h3>
+            <p class="leading-loose font-medium">
+                나의 선한 목자 되신 주님을 찬양합니다.<br>
+                나의 이름도, 나의 형편도, 나의 생각도 아시고,<br>
+                나의 모든 것을 아시는 주님을 찬양하며,<br>
+                우리가 정말로 주님만을 의존하며 의지하며 살겠습니다.<br>
+                어디로 가든지 주님이 이끄시는 대로 순종하며 살겠습니다.<br>
+                <strong class="text-indigo-700 text-lg block mt-4 mb-2">"여호와는 나의 목자시니 내가 부족함이 없습니다"</strong>
+                고백하며 사는 인생 되겠습니다.<br>
+                예수님의 이름으로 기도합니다. 아멘.
+            </p>
+        </section>
+        
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="bg-gray-100 py-8 text-center text-sm text-gray-500 border-t border-gray-200 font-medium">
+        © 2026 말씀묵상. 푸른동산 지산교회 정재학 목사
+    </footer>
+
+    <!-- 맨 위로 가기 버튼 -->
+    <button id="topBtn" onclick="scrollToTop()">↑<br>TOP</button>
+
+    <script>
+        // 화면 스크롤에 따라 TOP 버튼 보이기/숨기기
+        window.onscroll = function() { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                document.getElementById("topBtn").style.display = "block";
+            } else {
+                document.getElementById("topBtn").style.display = "none";
+            }
+        }
+
+        // 부드럽게 맨 위로 스크롤
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script> 
+</body>
+</html>
