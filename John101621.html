@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>울타리를 넘어서서 - 요한복음 10:16~21</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 기본 폰트 설정 (본문은 고딕, 제목/말씀은 명조 계열 혼합 사용) */
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #fcfcfc; /* 따뜻하고 부드러운 배경색 */
+            color: #333333;
+            word-break: keep-all; /* 한국어 줄바꿈 최적화 */
+        }
+        
+        .title-font {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        /* 성경 구절 인용구 스타일 */
+        .bible-verse {
+            background-color: #f3f4f6;
+            border-left: 4px solid #6366f1; /* 부드러운 남색 포인트 */
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+            font-family: 'Nanum Myeongjo', serif;
+            color: #374151;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* 강조 텍스트 하이라이트 (형광펜 효과) */
+        .highlight {
+            background: linear-gradient(180deg, rgba(255,255,255,0) 60%, #ffe066 60%);
+            padding: 0 4px;
+            font-weight: 500;
+        }
+        
+        .highlight-blue {
+            background: linear-gradient(180deg, rgba(255,255,255,0) 60%, #93c5fd 60%);
+            padding: 0 4px;
+            font-weight: 500;
+        }
+
+        .highlight-red {
+            background: linear-gradient(180deg, rgba(255,255,255,0) 60%, #fca5a5 60%);
+            padding: 0 4px;
+            font-weight: 500;
+        }
+
+        /* 본문 문단 스타일 */
+        p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        /* 소제목 스타일 */
+        h3.sub-title {
+            color: #4338ca;
+            font-weight: 700;
+            font-size: 1.35rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+        }
+
+        /* 번호 목록 스타일 커스텀 */
+        ol.custom-list {
+            counter-reset: my-counter;
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        ol.custom-list li {
+            position: relative;
+            padding-left: 2.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        ol.custom-list li::before {
+            counter-increment: my-counter;
+            content: counter(my-counter) ".";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #6366f1;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* TOP 버튼 커스텀 스타일 */
+        #topBtn {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #4f46e5;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: background-color 0.3s, transform 0.2s;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        #topBtn:hover {
+            background-color: #4338ca;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="max-w-3xl mx-auto pt-16 pb-8 px-5 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold title-font text-gray-900 leading-tight mb-4">
+            울타리를 넘어서서
+        </h1>
+        <p class="text-lg text-gray-500 font-medium">요한복음 10:16~21</p>
+        <div class="w-16 h-1 bg-indigo-500 mx-auto mt-6 opacity-50"></div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-5 pb-16">
+        
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold title-font text-gray-800 mb-5 border-b-2 pb-2 border-indigo-200 inline-block">
+                들어가며
+            </h2>
+            <p>예수님께서 양의 문이시며 우리의 선한 목자입니다. 우리는 양으로서 목자를 전적으로 의존해야 합니다. 이리와 같은 세상에 보내시면서도 함께하시는 선한 목자를 신뢰하라는 말씀, 얼마나 위로가 되고 감사한지요.</p>
+            
+            <div class="bible-verse">
+                <strong>16절</strong> 또 이 우리에 들지 아니한 다른 양들이 내게 있어 내가 인도하여야 할 터이니, 그들도 내 음성을 듣고 한 무리가 되어 한 목자에게 있으리라.
+            </div>
+            
+            <p>그런데 오늘 말씀은 조금 부담이 됩니다. 울타리 바깥에 다른 양들이 있는데, 이들도 내가 인도하여야 할 터이니 — <span class="highlight">'내가 인도하여야 하리라'는 원어적인 의미는 '내가 반드시 인도해야만 한다'</span>입니다.</p>
+            <p>'네가 <strong>반드시</strong> 거듭나야 하리라.' '네가 <strong>반드시</strong> 신령과 진정으로 예배해야 하리라.' 그리고 우리 바깥에 있는 다른 양들도 <strong>반드시 인도해야 한다</strong>는 것입니다.</p>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold title-font text-gray-800 mb-5 border-b-2 pb-2 border-indigo-200 inline-block">
+                신자를 만드는 '반드시 ~ 해야 한다'
+            </h2>
+            <p class="font-medium text-lg text-indigo-700 mb-4">거듭남, 예배, 전도</p>
+            <p>신자와 불신자의 가장 큰 차이점은, '반드시 ~ 해야 한다'를 이해하느냐 이해하지 못하느냐입니다.</p>
+            <ul class="list-disc pl-5 mb-6 text-gray-700 space-y-3">
+                <li>오직 예수 믿는 자만이 <span class="font-bold text-gray-900">거듭난다</span>는 것이 무슨 의미인지 압니다.</li>
+                <li>오직 예수를 믿는 자만이 <span class="font-bold text-gray-900">예배합니다</span>. 예수를 안 믿는 분들은 왜 이렇게 예배를 많이 드리는지 이해를 못 합니다.</li>
+            </ul>
+            <p>우리가 거듭나고 예배자가 되는 것이 끝이 아닙니다. 우리는 나아가 <span class="highlight">반드시 전도해야만</span> 합니다. 사람들은 왜 전도하는지 잘 이해하지 못합니다. 우리는 먼저 거듭나야 되고, 예배자가 되어야 하고, 전도자가 되어야 합니다.</p>
+            
+            <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 my-6 shadow-sm">
+                <p class="text-gray-800 font-medium mb-3">유감스럽게도 우리 가운데 예배자는 많은데, 우리 가운데 전도자는 매우 적습니다.</p>
+                <p class="text-gray-600 text-sm">한 통계에 따르면, 한 교회에서 전도하는 사람이 평균적으로 5%라고 합니다. 95%의 사람들은 예배자로 만족하고, 오직 5%의 사람들만 전도한다고 합니다. 예수님도 이미 탄식하셨습니다.</p>
+            </div>
+            
+            <div class="bible-verse">
+                <strong>마태복음 9:37</strong> 이에 제자들에게 이르시되, 추수할 것은 많되 일꾼이 적으니.
+            </div>
+            <p>오늘 본문에는, 바깥에 있는 양들이 너무 많은데, 잃어버린 양들이 너무 많은데, 그 양들을 예수님께로 인도할 목동들이 너무 적다는 것입니다. 여러분, 거듭나셨습니까? 여러분, 예배자이십니까? <strong class="text-indigo-600">전도자 되시기 바랍니다.</strong></p>
+        </section>
+
+        <section class="mb-12 bg-white p-6 md:p-8 rounded-xl border border-gray-200 shadow-sm">
+            <h2 class="text-2xl font-bold title-font text-gray-900 mb-5 border-b-2 pb-2 border-indigo-200 inline-block">
+                전도자가 되지 않고 예배자로만 머물 때
+            </h2>
+            <p>전도자가 되지 않고 예배자에 머물러 있으면 이런 문제가 생겨납니다. 예배를 통해서 은혜받는 것에 자꾸 치중하게 됩니다. <span class="highlight-red">내가 은혜를 받는 것이 중요하며, 받은 은혜를 흘려보내는 것이 아니라 받는 것만 중요합니다.</span></p>
+            <p>그러다 보니 예배가 좋은 예배였느냐, 나쁜 예배였느냐를 스스로 판단하기 시작합니다. 목회자의 설교를 판단하고 비평하기 시작합니다. 예배해야 하니 나를 좀 만족시켜 달라는 것입니다. 맘에 안 들면 여기저기 교회를 쇼핑하기 시작합니다.</p>
+            <p class="font-bold text-lg text-gray-800 mt-6 mb-3 p-4 bg-red-50 rounded shadow-sm border-l-4 border-red-400">
+                왜 예배드리는 것이 그토록 중요합니까?
+            </p>
+            <p>전도의 자리로 나아가지 못하고 예배자로만 머물 때에, 은혜를 허비하게 만들고, 은혜를 소비하게 만들고, 은혜를 흘려보내지 않는 문제가 생겨납니다.</p>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold title-font text-gray-800 mb-5 border-b-2 pb-2 border-indigo-200 inline-block">
+                말씀을 전파하라
+            </h2>
+            <p>말씀을 읽고 공부하는 것이 중요합니다. 하나님의 영감으로 기록된 말씀을 아는 것이 중요합니다.</p>
+            <div class="bible-verse text-sm">
+                <strong>디모데후서 3:16</strong> 모든 성경은 하나님의 감동으로 된 것으로, 교훈과 책망과 바르게 함과 의로 교육하기에 유익하니, 이는 하나님의 사람으로 온전하게 하며 모든 선한 일을 행할 능력을 갖추게 하려 함이라.<br><br>
+                <strong class="text-indigo-600 text-base">디모데후서 4:2 너는 말씀을 전파하라.</strong> 때를 얻든지 못 얻든지 항상 힘쓰라. 범사에 오래 참음과 가르침으로 경책하며 경계하며 권하라.
+            </div>
+            <p>성경공부하는 것이 중요한 것이 아니고, 성경이 하나님의 말씀임을 아는 것이 중요한 것이 아니고 — <span class="highlight-blue">"너는 말씀을 전파하라"</span>는 것이 하나님의 뜻임을 알아야 합니다.</p>
+            <p>내가 울타리 안에 들어온 것으로 만족하면 안 됩니다. 내가 이제 구원받는 구원 버스에 탄 것으로 만족하면 안 됩니다. 버스는 떠나면 다른 버스를 기다렸다가 타면 되지만, <strong>구원 버스는 다릅니다.</strong> 구원받지 못한 사람들, 죽어가고 멸망 길로 가는 사람들을 불쌍히 여기는 마음이 있어야 합니다.</p>
+            
+            <div class="bible-verse">
+                <strong>마태복음 9:36</strong> 무리를 보시고 불쌍히 여기시니, 이는 그들이 목자 없는 양과 같이 고생하며 기진함이라.
+            </div>
+            <p>예수님에게는 불쌍히 여기는 마음이 있었습니다. 울타리 안에 들지 아니한 양의 특징이 무엇입니까? <strong>목자 없는 양</strong>입니다.</p>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold title-font text-gray-800 mb-5 border-b-2 pb-2 border-indigo-200 inline-block">
+                하나님의 마음이 없어서 전도하지 못합니다
+            </h2>
+            <p>양은 목자 없으면 살 수 없는 존재입니다. 목자 없이 죽어가는 양 떼를 향하여 예수님은 불쌍히 여기는 마음이 있었습니다.</p>
+            <p>우리가 하나님의 말씀을 머리로는 알아요. 전도해야 된다는 걸 알고 있습니다. 그런데 우리가 왜 전도 못 하는지 아십니까? <span class="highlight-red">우리에게 하나님의 마음이 없습니다. 죽어가는 영혼들을 불쌍히 여기는 마음이 없습니다.</span> 말씀을 모르는 게 아니에요. 명령도 알아요. 말씀을 아는데, 하나님의 마음을 몰라요.</p>
+
+            <h3 class="sub-title">1. 요나 — 말씀은 알았지만 마음을 몰랐던 선지자</h3>
+            <p>구약 시대에 하나님의 말씀을 들었지만 하나님의 마음을 이해하지 못한 대표적인 선지자가 요나 선지자입니다. 하나님이 니느웨로 가서 회개하라고 외치라(욘 1:2) 하셨지만, 요나는 이방 나라인 니느웨가 구원받는 것이 싫어 도망갑니다. 명령을 몰라서가 아니라 <strong>하나님의 마음을 몰랐기 때문</strong>입니다.</p>
+            <p>물고기 뱃속에서 살아난 후 다시 명령을 받고 니느웨로 가지만, 사흘 길이 되는 성읍을 단 하루만 다니며 대충 전합니다. 그런데도 12만 명의 니느웨 사람들이 회개하고 돌아옵니다. 이때 요나의 반응은 어떠했습니까?</p>
+            <div class="bible-verse">
+                <strong>요나 4:1</strong> 요나가 매우 싫어하고 성내며... (자살 소동을 벌이며 죽기를 구함)
+            </div>
+            <p>하나님은 박 넝쿨 비유를 통해 요나를 책망하십니다. "네가 하루아침에 났다가 말라버리는 박 넝쿨을 그렇게 아끼느냐? 이 큰 성읍 니느웨에는 좌우를 분별하지 못하는 자가 12만여 명이요... <span class="highlight-blue">내가 이들을 어찌 아끼지 않겠느냐?</span>"</p>
+            <p class="font-medium text-gray-800">요나는 예배자였습니다. 그러나 전도자가 아니었습니다. 내가 왜 전도하지 못합니까? 내게 하나님 아버지의 마음이 없음을 인정해야 합니다.</p>
+
+            <h3 class="sub-title">2. 탕자의 형 — 찾아 나서지 않은 마음</h3>
+            <p>신약성경에 아버지의 마음이 없었던 한 사람이 바로 탕자의 형입니다. 동생이 집을 나가면 형이 찾아 나서야 합니다. 그러나 형은 늙으신 아버지와 집에 있으면서도 동생을 찾아 나서지 않았습니다.</p>
+            <p>날마다 마을 입구에서 안절부절못하며 기다리시는 아버지를 보고서도 동생을 찾지 않았습니다. 우리가 전도를 안 하는 이유는 <strong>아버지의 마음이 없기 때문</strong>입니다.</p>
+
+            <h3 class="sub-title">3. 다윗 — 아버지의 심정으로 양을 지킨 목자</h3>
+            <p>구약성경 인물 중에 목자이면서 <span class="highlight">아버지의 심정으로 양을 지켰던 목자</span>가 바로 다윗입니다. 사자나 곰이 양을 물어 가면 다윗은 어쩔 수 없다 포기하지 않고 달려가 입을 찢고 양을 구했습니다.</p>
+            <p>이것이 어떻게 가능합니까? 양을 그저 동물로 대하면 불가능합니다. <strong>양을 자녀로 대할 때만 가능합니다.</strong> 부모는 내 자식이 곰에게 물려가면 달려나가서 싸웁니다. 다윗에게는 목자의 마음만이 아니라 아버지의 마음이 있었습니다.</p>
+        </section>
+
+        <section class="mb-12 bg-indigo-50 p-6 md:p-8 rounded-xl border border-indigo-100 shadow-sm">
+            <h2 class="text-2xl font-bold title-font text-indigo-900 mb-5 border-b-2 pb-2 border-indigo-200 inline-block">
+                전파하는 자가 없이 어찌 들으리오
+            </h2>
+            <p>전하는 자가 없이 어찌 예수님을 믿을 수 있겠습니까? (로마서 10:14) 파수꾼의 사명은 외치는 것입니다. 믿고 안 믿고는 그 사람에게 달린 문제지만, 우리의 사명은 멸망의 길에서 나오라고, 구원의 방주로 들어와야 한다고 전하는 것입니다.</p>
+
+            <h3 class="font-bold text-indigo-800 text-xl mt-8 mb-4">하나님 아버지의 마음으로 살았던 사람들</h3>
+            <p>사도행전 21장 8절은 빌립 집사를 <span class="font-bold text-indigo-700">"전도자 빌립"</span>이라고 부릅니다. 우리의 별명도 전도자가 되기를 원합니다. 이사야서에서 "누가 나를 위하여 갈꼬?" 하시는 하나님의 탄식 음성을 듣고 선교의 사명을 감당한 사람들이 있습니다.</p>
+            
+            <div class="bible-verse bg-white">
+                <strong>요한복음 10:16</strong> 우리에 들지 아니한 다른 양들이 내게 있어, 그들도 인도하여야 하리라.
+            </div>
+            
+            <ul class="list-disc pl-5 mt-4 text-gray-700 space-y-2">
+                <li><strong class="text-gray-900">존 엘리엇:</strong> 백인들만 믿던 17~18세기, "아직 우리에 들지 않은 다른 양이 있다"며 아메리칸 인디언을 위해 42년간 헌신.</li>
+                <li><strong class="text-gray-900">허드슨 테일러:</strong> 중국 내지 선교회 설립.</li>
+                <li><strong class="text-gray-900">데이비드 리빙스턴 & 짐 파커:</strong> 묘비명에 요한복음 10:16을 새긴 리빙스턴의 뒤를 이어 아프리카로 향한 짐 파커.</li>
+                <li><strong class="text-gray-900">한국의 선교사들:</strong> 알렌, 언더우드, 아펜젤러, 토마스 등 은둔의 땅 조선에 목자와 아버지의 심정으로 찾아와 복음을 전함.</li>
+            </ul>
+        </section>
+
+        <section class="text-center text-gray-700 mt-12 mb-8 bg-gray-50 p-8 rounded-lg shadow-inner border border-gray-200">
+            <h3 class="font-bold text-2xl mb-4 title-font text-indigo-900">울타리를 넘어</h3>
+            <p class="text-lg font-medium mb-6">
+                우리도 교회의 울타리를 넘어 전도자가 되십시다. 예수님께 인도하십시다.<br>
+                <span class="highlight">"누가 나를 위하여 갈꼬?"</span> 주님이 부르실 때 <span class="highlight">"내가 여기 있나이다"</span><br>
+                하나님의 마음을 알고 내가 가길 원합니다. 응답하십시다.
+            </p>
+            <p class="text-gray-600 mb-8">예루살렘, 유대, 사마리아, 땅끝까지. 예수님 마음, 하나님 마음을 간직하고, 누구를 만나든 예수를 전하는 전도자 되시기 바랍니다.</p>
+            
+            <div class="w-16 h-1 bg-gray-300 mx-auto my-6"></div>
+
+            <h3 class="font-bold text-xl mb-6 title-font text-indigo-900">기도하겠습니다</h3>
+            <p class="leading-loose font-medium">
+                집 나간 자식이 돌아오기를 기다리는 아버지의 마음이 내 안에 없었습니다.<br>
+                거듭난 것에 감사하고 예배자 된 것에 만족했습니다.<br>
+                이제 예배자를 넘어 <strong class="text-indigo-700 text-lg">전도자로 거듭나게 하여 주시옵소서.</strong><br><br>
+                "너는 말씀을 전파하라, 때를 얻든지 못 얻든지 전파하라.<br>
+                온 천하에 두루 다니며 나의 증인이 되라" 하셨사오니,<br>
+                우리의 심령에 하나님 아버지의 마음을 부어 주시옵소서.<br><br>
+                예수님의 이름으로 기도드립니다. 아멘.
+            </p>
+        </section>
+        
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="bg-gray-100 py-8 text-center text-sm text-gray-500 border-t border-gray-200 font-medium">
+        © 2026 말씀묵상. 푸른동산 지산교회 정재학 목사
+    </footer>
+
+    <!-- 맨 위로 가기 버튼 -->
+    <button id="topBtn" onclick="scrollToTop()">↑<br>TOP</button>
+
+    <script>
+        // 화면 스크롤에 따라 TOP 버튼 보이기/숨기기
+        window.onscroll = function() { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                document.getElementById("topBtn").style.display = "block";
+            } else {
+                document.getElementById("topBtn").style.display = "none";
+            }
+        }
+
+        // 부드럽게 맨 위로 스크롤
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script> 
+</body>
+</html>
